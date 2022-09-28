@@ -1,0 +1,235 @@
+
+input {
+  outline: none;
+  width: 100%;
+}
+
+.btn {
+  position: absolute;
+  width: 90px;
+  height: 30px;
+  top: 4px;
+  right: 0;
+  border: 1px solid #999;
+  background-color: #fff;
+}
+.col {
+  margin: 0 60px 30px 0;
+  width: 420px;
+  height: 40px;
+  float: left
+}
+.empty_right {
+  margin-right: 600px;
+}
+.modify_tit {
+  font-size: 2.0em;
+  margin: 0 auto;
+  line-height: 48px;
+  /* font-weight: 200 */
+}
+.change_membership {
+  width: 1200px;
+  padding: 110px 120px 0;
+  margin: 0 auto; 
+}
+.change_info_guide  {
+  height: 48px;
+  padding: 50px 0;
+  margin: 50px 0;
+  border-top: 1px solid black;
+}
+.edit_tap {
+  display: none;
+}
+.change_info_guide  > .edit_tap+label {
+  line-height: 48px;
+  text-align: center;
+  width: 50%;
+  height: 48px;
+  float: left;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  font-size: 16px;
+  user-select: none;
+  transition: 
+    background-color .3s,
+    color .3s
+}
+
+/* change */
+.change_info>form {
+  position: relative;
+}
+input[type="radio"]:checked+label{
+  background-color: #1f1f1f;
+  color: #fff;
+}
+.cont1 {
+  height: 240px;
+  margin: 40px 0;
+}
+.input_label, .input_wrap {
+  display: inline-block
+}
+.input_label {
+  width: 110px;
+  line-height: 20px;
+  padding: 10px 0;
+}
+.input_wrap {
+  width: 306px;
+  position: relative;
+}
+.input_wrap input {
+  height: 40px;
+  line-height: 20px;
+  border: 0;
+  border-bottom: 1px solid #dedede;
+  padding: 10px 0;
+}
+.user_name {
+}
+.cont2 {
+  height: 200px;
+}
+.user_adress .input_wrap:last-child {
+  width: 100%;
+  margin-top: 40px;
+}
+/* .user_birth:after {
+  content: "";
+  clear: both;
+} */
+.delete {
+  font-size: 0.9em;
+  border: 0;
+  width: 70px;
+  position: absolute;
+
+}
+.btn.delete img {
+  width: 20px;
+  height: 16px;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.leave_btn {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+  line-height: 34px;
+  width: 100px;
+  height: 34px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #999;
+}
+.edit_done {
+  width: 890px;
+  height: 70px;
+  margin: 60px auto 120px;
+  text-align: center;
+}
+
+.edit_done > a:last-child  button {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+.edit_done button {
+  width: 440px;
+  height: 60px;
+  position: relative;
+  font-size: 1.2em;
+  margin: 0 2px;
+}
+.edit_done a {
+  line-height: 60px;
+  display: block;
+  float: left;
+}
+input:focus {
+  border-bottom: 1px solid black;
+}
+
+/* change_password */
+.password {
+  width: 960px;
+}
+.form_check_pw {
+  height: 740px;
+  margin: 70px 0;
+  padding: 65px 0;
+  color: #999;
+}
+.form_check_pw input:focus {
+  border: 0;
+}
+.account_info, .new_password_input, .confirm_password_input {
+  width: 420px;
+  /* position: relative; */
+  text-align: center;
+  height: 180px;
+  margin: 0 0 70px;
+  padding: 65px 0;
+  color: #999;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.new_password_input, 
+.confirm_password_input {
+  position: relative;
+  float: left;
+}
+.new_password_input {
+  margin-right: 60px;
+}
+.confirm_password_input {
+  margin-left: 60px;
+
+}
+.password_input {
+  text-align: center;
+  border: none;
+  outline: none;
+  height: 50px;
+  line-height: 30px;
+  font-size: 1.4em;
+  background-color: transparent;
+  letter-spacing: 4px;
+  z-index: 20;
+}
+.pw_wrap {
+  position: relative;
+}
+.placeholder {
+  position: absolute;
+  width: 100%;
+  top: -3px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: cneter;
+  line-height: 50px;
+  font-size: 1.4em;
+  letter-spacing: 4px;
+  z-index:10;
+  display: block;
+}
+.policy_guide dt {
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 60px
+}
+.policy_guide ul {
+  margin: 0 60px;
+  font-size: 0.9em;
+}
+.policy_guide ul li{
+  list-style: disc;
+  margin-bottom: 5px;
+
+}
