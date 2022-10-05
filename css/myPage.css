@@ -1,0 +1,169 @@
+.content { 
+  width: 1200px;
+  margin: 0 auto;
+  height: 1163px;
+  padding: 118px 0 174px
+}
+.snb {
+  width: 157px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 27px;
+  margin-right: 60px;
+}
+.snb_tit {
+  font-size: 2.0em;
+  line-height: 32px;
+  margin-bottom: 50px;
+}
+.snb_list { 
+  color: #999;
+  height: 323px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.snb_list li:first-child a {
+  color: #000;
+}
+.snb_list a {
+  display: block;
+  width: 100%;
+}
+
+section.my_page {
+  width: 973px;
+  padding-bottom: 174px;
+}
+.my_page .info_wrap {
+  height: 140px;
+  border-bottom: 4px solid #000;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+.my_page .info_wrap .my-info {
+  font-size: 2.0em;
+  line-height: 40px;
+}
+.my_page .info_wrap .my-info strong {
+  font-weight: 700;
+}
+.my_page .info_wrap .my-info i {
+  color: #ff7e00;
+}
+.my_page .info_wrap .my-point ul li {
+  min-width: 165px;
+  text-align: center;
+  height: 82px;
+  position: relative;
+}
+.my_page .info_wrap .my-point ul .fl:nth-child(2):before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 51px;
+  background-color: #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.my_page .info_wrap .my-point li strong {
+  display: block;
+  color: #888;
+}
+.my_page .info_wrap .my-point li span {
+  display: block;
+  font-size: 1.8em;
+  line-height: 30px;
+  height: 30px;
+}
+.my_page .info_wrap .my-point li span em {
+  font-weight: 700;
+}
+.my_page .info_wrap .my-point li small {
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  line-height: 40px;
+  padding: 0 12px;
+  color: #666;
+}
+.my_page>h4 {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.my_page .total-order {
+  position: relative; 
+  text-align: right;
+  margin: -20px 20px 20px 0;
+}
+.my_page .total-order a {
+  display: inline-block;
+  position: relative;
+}
+.my_page .total-order .material-symbols-outlined {
+  position: absolute;
+  top: -1px;
+  color: #999;
+}
+.my_page .tab {
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  padding-bottom: 100px;
+}
+.my_page .tab>li {
+  flex: 1;
+  border: 1px solid #ddd;
+  color: #999;
+}
+.my_page .tab li:first-child {
+  border-right: 0;
+  background-color: #222;
+  color: #fff;
+}
+.my_page .tab>li>a {
+  display: inline-block;
+}
+
+.my_page .tab_contents > ul {
+  justify-content: center;
+  text-align: center;
+  color: #999;
+  /* margin-bottom: 40px; */
+}
+.my_page .tab_contents > .flex_box > li {
+  width: 155px;
+  position: relative;
+}
+.my_page .tab_contents > .flex_box > li:after {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 26px;
+  background: url(../images/icn_order_arrow.png) no-repeat 100%;
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+.my_page .tab_contents>.flex_box>li:last-child:after {
+  display: none;
+}
+.my_page>.tab_contents>.flex_box>li>a {
+  display: block;
+  height: 125px;
+  padding-top: 40px;
+}
+.my_page .tab_contents>.flex_box>li>a>.count {
+  display: block;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.my_page .tab_contents .order_list {
+  border-top: 1px solid #000;
+  border-bottom: 4px solid #000;
+  text-align: center;
+  margin: 40px 0;
+}
+.my_page .tab_contents .order_list p {
+  padding: 140px 0;
+
+}
