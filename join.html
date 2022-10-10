@@ -105,7 +105,7 @@
       <section class="join">
 
         <h2 class="join_logo">회원 가입</h2> 
-        <form action="" method=""  autocomplete="off">
+        <form action="index.html" method="get"  autocomplete="off">
 
           <div class="membership_join_id">
             <label for="user-id">
@@ -165,15 +165,14 @@
                 <button class="join_checkbox_link" type="button">자세히</button>
               </div>
           </div>
+          <button type="click"  class="joinus" disabled>가입하기</button>
         </form>
 
-        <button type="submit"  class="joinus">가입하기</button>
         
       </section>
 
     </main>
       <script>
-        
         let $userId = document.getElementById('user-id');
         let $errId = document.querySelector('.err-id');
         let $userPw = document.getElementById('user-pw');
@@ -195,9 +194,13 @@
         function btnAble() {
           if (flagId && flagPw && flagEmail) {
             $joinUs.removeAttribute('disabled');
+            $joinUs.classList.add('clickable');
+            return;
           } 
           if (!(flagId && flagPw && flagEmail)) {
             $joinUs.setAttribute('disabled', 'true');
+            $joinUs.classList.remove('clickable');
+            return;
           }
         }
 
@@ -209,6 +212,7 @@
             $errId.classList.add('cor')
             $errId.textContent = '사용 가능한 아이디입니다.'
             flagId = true;
+            btnAble();
             return;
           }
           if(!ptnId.test(val)) {
@@ -234,6 +238,7 @@
             $errId.classList.add('cor')
             $errId.textContent = '사용 가능한 아이디입니다.'
             flagId = true;
+            btnAble();
             return;
           }
           if (!val) {
@@ -263,9 +268,10 @@
         });
         $userPw.addEventListener('blur', (e) => {
           let val = e.target.value;
-          if (!val) { // 유효성 검사 통과
+          if (!val) { 
             $errPw.textContent = '필수 입력사항입니다.';
             flagPw = false;
+
             return;
           }
         });
@@ -275,9 +281,10 @@
           if (val !== $userPw.value) {
             $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.';
             flagPw = false;
-          } else {
+          } else { // 유효성 검사 통과
             $pwCheckMsg.textContent = '';
             flagPw = true;
+            btnAble();
           }
         });
         $userEmail.addEventListener('input', (e) => {
@@ -289,6 +296,7 @@
           } else { // 유효성 검사 통과
             $errEmail.textContent = ''
             flagEmail = true;
+            btnAble();
           }
         });
         $policyAll.addEventListener('click', (e) => {
@@ -296,8 +304,6 @@
             checkbox.checked = $policyAll.checked;
           });
         });
-        
-        btnAble();
         </script>
     
     <!-- FOOTER -->
