@@ -105,79 +105,209 @@
       <section class="join">
 
         <h2 class="join_logo">회원 가입</h2> 
-        <form action="" method=""  autocomplete="false">
+        <form action="" method=""  autocomplete="off">
 
           <div class="membership_join_id">
-            <label for="">
+            <label for="user-id">
               <p class="necessary">아이디</p>
-              <input type="text" placeholder="영문, 숫자 5-11 자">
             </label>
+              <input type="text" id="user-id"  placeholder="영문, 숫자 5-11 자" maxlength="11">
+              <div class="err-id err"></div>
           </div>
           <div class="membership_join_pw">
-            <label for="">
+            <label for="user-pw">
               <p class="necessary">비밀번호</p>
-              <input type="password" placeholder="숫자, 영문, 특수문자 조합 최소8자" required class="spacing">
-              <input type="password" placeholder="비밀번호 재입력" required>
             </label>
+              <input type="password" placeholder="숫자, 영문, 특수문자 조합 최소8자" id="user-pw">
+              <div class="err-pw err"></div>
+              <input type="password" id="pw-check" placeholder="비밀번호 재입력" >
+              <div class="pw-check-msg"></div>
           </div>
           <div class="membership_join_mail">
-            <label for="">
+            <label for="user-email">
               <p class="necessary">이메일</p>
-              <input type="text">
             </label>
+              <input type="text" id="user-email">
+              <div class="err-email"></div>
           </div>  
           <div class="membership_policy_agreement flex_box">
-              <div class="policy_all_agreement">
+              <div class="policy_all_agreement flex_box">
+                <input type="checkbox" name="policy" id="policy_all">
                 <label for="policy_all">
-                  <input type="checkbox" name="" id="policy_all">
                   약관 전체 동의하기
                 </label>
               </div>
-              <div class="privacy_agreement">
+              <div class="privacy_agreement flex_box">
+                <input type="checkbox" name="policy" id="privacy">
                 <label for="privacy">
-                  <input type="checkbox" name="" id="privacy">
                   [필수] 개인정보 수집 및 이용 동의
                 </label>
-                <button class="join_checkbox_link">자세히</button>
+                <button class="join_checkbox_link" type="button">자세히</button>
               </div>
-              <div class="site_use_agreement">
+              <div class="site_use_agreement flex_box">
+                <input type="checkbox" name="policy" id="site_use">
                 <label for="site_use">
-                  <input type="checkbox" name="" id="site_use">
                   [필수] 언더70 이용약관
                 </label>
-                <button class="join_checkbox_link">자세히</button>
+                <button class="join_checkbox_link" type="button">자세히</button>
               </div>
-              <div class="join_age_agreement">
+              <div class="join_age_agreement flex_box">
+                <input type="checkbox" name="policy" id="join_age">
                 <label for="join_age">
-                  <input type="checkbox" name="" id="join_age">
                   [필수] 만 14세 미만 가입제한
                 </label>
               </div>
-              <div class="marketing_agreement">
+              <div class="marketing_agreement flex_box">
+                <input type="checkbox" name="policy" id="marketing">
                 <label for="marketing">
-                  <input type="checkbox" name="" id="marketing">
                   [선택] 마케팅 활용 및 광고성 정보 수신 동의
                 </label>
-                <button class="join_checkbox_link">자세히</button>
+                <button class="join_checkbox_link" type="button">자세히</button>
               </div>
           </div>
         </form>
 
-        <button type="submit"  class="joinus" disabled>가입하기</button>
+        <button type="submit"  class="joinus">가입하기</button>
         
       </section>
 
     </main>
-      
+      <script>
+        
+        let $userId = document.getElementById('user-id');
+        let $errId = document.querySelector('.err-id');
+        let $userPw = document.getElementById('user-pw');
+        let $errPw = document.querySelector('.err-pw');
+        let $pwCheck = document.getElementById('pw-check');
+        let $pwCheckMsg = document.querySelector('.pw-check-msg');
+        let $userEmail = document.getElementById('user-email');
+        let $errEmail = document.querySelector('.err-email');
+        let $policyAll = document.getElementById('policy_all');
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let $joinUs = document.querySelector('.joinus');
+        
+        let flagId, flagPw, flagEmail = false;
+
+        let ptnId = /^[a-z0-9]{5,11}$/g;
+        let ptnPw = /^(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
+        let ptnEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+        function btnAble() {
+          if (flagId && flagPw && flagEmail) {
+            $joinUs.removeAttribute('disabled');
+          } 
+          if (!(flagId && flagPw && flagEmail)) {
+            $joinUs.setAttribute('disabled', 'true');
+          }
+        }
+
+        $userId.addEventListener('input', (e) => {
+          let val = e.target.value;
+          console.log('val1 ' + val);
+          if(ptnId.test(val)) { // 유효성 검사 통과
+            $errId.classList.remove('err')
+            $errId.classList.add('cor')
+            $errId.textContent = '사용 가능한 아이디입니다.'
+            flagId = true;
+            return;
+          }
+          if(!ptnId.test(val)) {
+            $errId.classList.remove('cor')
+            $errId.classList.add('err')
+            $errId.textContent = '영문, 숫자 5-11.2'
+            flagId = false;
+            return;
+          } 
+          if (val.length < 5) {
+            $errId.classList.remove('cor')
+            $errId.classList.add('err')
+            $errId.textContent = '영문, 숫자 5-11.1'
+            flagId = false;
+            return;
+          }
+        });
+        $userId.addEventListener('blur', (e) => {
+          let val = e.target.value;
+          console.log('val2'+val);
+          if(ptnId.test(val)) { // 유효성 검사 통과
+            $errId.classList.remove('err')
+            $errId.classList.add('cor')
+            $errId.textContent = '사용 가능한 아이디입니다.'
+            flagId = true;
+            return;
+          }
+          if (!val) {
+            $errId.textContent = '필수 입력사항입니다.'
+            flagId = false;
+            return;
+          }       
+          if (!ptnId.test(val)) {
+            $errId.classList.remove('cor')
+            $errId.textContent = '영문, 숫자 5-11.'
+            flagId = false;
+            return;
+          }
+        });
+        $userPw.addEventListener('input', (e) => {
+          let val = e.target.value;
+          if (ptnPw.test(val)) {
+            $errPw.textContent = '';
+            flagPw = true;
+            return;
+          }
+          if (!ptnPw.test(val)) {
+            $errPw.textContent = '8~30자 이내로 입력해 주십시오.';
+            flagPw = false;
+            return;
+          }
+        });
+        $userPw.addEventListener('blur', (e) => {
+          let val = e.target.value;
+          if (!val) { // 유효성 검사 통과
+            $errPw.textContent = '필수 입력사항입니다.';
+            flagPw = false;
+            return;
+          }
+        });
+        $pwCheck.addEventListener('blur', (e) => {
+          let val = e.target.value;
+          console.log(val);
+          if (val !== $userPw.value) {
+            $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.';
+            flagPw = false;
+          } else {
+            $pwCheckMsg.textContent = '';
+            flagPw = true;
+          }
+        });
+        $userEmail.addEventListener('input', (e) => {
+          let val = e.target.value;
+          if (!ptnEmail.test(val)) {
+            $errEmail.textContent = '이메일 주소가 올바르지 않습니다.'
+            flagEmail = false;
+            return;
+          } else { // 유효성 검사 통과
+            $errEmail.textContent = ''
+            flagEmail = true;
+          }
+        });
+        $policyAll.addEventListener('click', (e) => {
+          checkboxes.forEach((checkbox) => {
+            checkbox.checked = $policyAll.checked;
+          });
+        });
+        
+        btnAble();
+        </script>
     
     <!-- FOOTER -->
     <div class="footer_wrap">
       <footer id="footer" class="footer">
-
+        
         <h2 class="logo_footer">사이트 이용안내</h2>
-    
+        
         <div class="policy_introduce">
-    
+          
           <div class="flex_box">
             <p class="name_company">법인명(상호): 언더70</p>
             <p class="ceo">대표자(성명): 한승열</p>
