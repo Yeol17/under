@@ -15,13 +15,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <!-- CSS -->
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/join.css">
 
+  <style>
+    
+    </style>
 <body>
   <div class="wrap">
     <!--HEADER-->
@@ -111,24 +112,40 @@
             <label for="user-id">
               <p class="necessary">아이디</p>
             </label>
-              <input type="text" id="user-id"  placeholder="영문, 숫자 5-11 자" maxlength="11">
-              <div class="err-id err"></div>
+              <div class="input-wrap">
+                <input type="text" id="user-id"  placeholder="영문, 숫자 5-11 자" maxlength="11">
+                <span class="material-symbols-outlined clear-btn id-clear">cancel</span>
+                <div class="err-id err"></div>
+              </div>
           </div>
           <div class="membership_join_pw">
             <label for="user-pw">
               <p class="necessary">비밀번호</p>
             </label>
-              <input type="password" placeholder="숫자, 영문, 특수문자 조합 최소8자" id="user-pw">
+            <div class="input-wrap">
+              <span class="material-symbols-outlined pw-visible_off">visibility_off</span>
+              <span class="material-symbols-outlined pw-visible">visibility</span>
+              <input type="password" maxlength="30" placeholder="숫자, 영문, 특수문자 조합 최소8자" id="user-pw">
+              <span class="material-symbols-outlined clear-btn pw-clear">cancel</span>
               <div class="err-pw err"></div>
-              <input type="password" id="pw-check" placeholder="비밀번호 재입력" >
+            </div>
+            <div class="input-wrap">
+              <span class="material-symbols-outlined check-visible_off">visibility_off</span>
+              <span class="material-symbols-outlined check-visible">visibility</span>
+              <input type="password" maxlength="30" id="pw-check" placeholder="비밀번호 재입력" >
+              <span class="material-symbols-outlined clear-btn check-clear">cancel</span>
               <div class="pw-check-msg"></div>
+            </div>
           </div>
           <div class="membership_join_mail">
             <label for="user-email">
               <p class="necessary">이메일</p>
             </label>
+            <div class="input-wrap">
               <input type="text" id="user-email">
+              <span class="material-symbols-outlined clear-btn email-clear">cancel</span>
               <div class="err-email"></div>
+            <div>
           </div>  
           <div class="membership_policy_agreement flex_box">
               <div class="policy_all_agreement flex_box">
@@ -174,39 +191,86 @@
     </main>
       <script>
         let $userId = document.getElementById('user-id');
+        let $idClear = document.querySelector('.membership_join_id .clear-btn');
         let $errId = document.querySelector('.err-id');
         let $userPw = document.getElementById('user-pw');
+        let $pwClear = document.querySelector('.pw-clear');
+        let $pwVisible = document.querySelector('.pw-visible');
+        let $pwVisibleOff = document.querySelector('.pw-visible_off');
         let $errPw = document.querySelector('.err-pw');
+        let $checkClear = document.querySelector('.check-clear');
         let $pwCheck = document.getElementById('pw-check');
+        let $checkVisible = document.querySelector('.check-visible');
+        let $checkVisibleOff = document.querySelector('.check-visible_off');
         let $pwCheckMsg = document.querySelector('.pw-check-msg');
         let $userEmail = document.getElementById('user-email');
+        let $emailClear = document.querySelector('.email-clear');
         let $errEmail = document.querySelector('.err-email');
         let $policyAll = document.getElementById('policy_all');
         let checkboxes = document.querySelectorAll('input[type="checkbox"]');
         let $joinUs = document.querySelector('.joinus');
+        // 약관 동의
+        let $joinAge = document.getElementById('join_age');
+        let $privacy = document.getElementById('privacy');
+        let $siteUse = document.getElementById('site_use');
         
-        let flagId, flagPw, flagEmail = false;
+        let flagId, flagPw, flagEmail, flagPolicy = false;
 
         let ptnId = /^[a-z0-9]{5,11}$/g;
         let ptnPw = /^(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
         let ptnEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
         function btnAble() {
-          if (flagId && flagPw && flagEmail) {
+          if (flagId && flagPw && flagEmail && flagPolicy) {
             $joinUs.removeAttribute('disabled');
             $joinUs.classList.add('clickable');
             return;
           } 
-          if (!(flagId && flagPw && flagEmail)) {
+          if (!(flagId && flagPw && flagEmail && flagPolicy)) {
             $joinUs.setAttribute('disabled', 'true');
             $joinUs.classList.remove('clickable');
             return;
           }
         }
-
+        function isPolicyAgree(e) {
+          if ($privacy.checked && $siteUse.checked && $joinAge.checked) {
+            flagPolicy = true;
+            btnAble();
+          } else {
+            flagPolicy = false;
+            btnAble();
+          }
+        }
+        function clearValue(e) {
+          let val = e.target;
+          val.style.display = "none";
+          val.previousElementSibling.focus();
+          val.previousElementSibling.value = '';
+          val.nextElementSibling.classList.remove('cor');
+          val.nextElementSibling.classList.add('err');
+          val.nextElementSibling.textContent = "필수 입력사항입니다.";
+        }
+        function pwVisible(e){
+          let val = e.target;
+          val.style.display = "none"
+          val.previousElementSibling.style.display = "block"
+          val.nextElementSibling.setAttribute('type', 'text');
+        }
+        function pwVisibleOff(e){
+          let val = e.target;
+          val.nextElementSibling.nextElementSibling.setAttribute('type', 'password');
+          val.style.display = "none"
+          val.nextElementSibling.style.display = "block"
+        }
+      
         $userId.addEventListener('input', (e) => {
           let val = e.target.value;
-          console.log('val1 ' + val);
+          if(val) {
+            $idClear.style.display = "block"; 
+          } else {
+            $idClear.style.display = "none";
+          }
+
           if(ptnId.test(val)) { // 유효성 검사 통과
             $errId.classList.remove('err')
             $errId.classList.add('cor')
@@ -255,6 +319,11 @@
         });
         $userPw.addEventListener('input', (e) => {
           let val = e.target.value;
+          if(val) {
+            $pwClear.style.display = "block"; 
+          } else {
+            $pwClear.style.display = "none";
+          }
           if (ptnPw.test(val)) {
             $errPw.textContent = '';
             flagPw = true;
@@ -271,8 +340,22 @@
           if (!val) { 
             $errPw.textContent = '필수 입력사항입니다.';
             flagPw = false;
-
             return;
+          }
+          if (val && val !== $pwCheck.value) {
+            $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.1';
+            flagPw = false;
+          } else { // 유효성 검사 통과
+            $pwCheckMsg.textContent = '';
+            flagPw = true;
+          }
+        });
+        $pwCheck.addEventListener('input', (e) => {
+          let val = e.target.value;
+          if(val) {
+            $checkClear.style.display = "block"; 
+          } else {
+            $checkClear.style.display = "none";
           }
         });
         $pwCheck.addEventListener('blur', (e) => {
@@ -287,8 +370,20 @@
             btnAble();
           }
         });
+        $userEmail.addEventListener('blur', (e) => {
+          if (!e.target.value) {
+            $errEmail.textContent = '필수 입력사항입니다.'
+            flagEmail = false;
+
+          }
+        });
         $userEmail.addEventListener('input', (e) => {
           let val = e.target.value;
+          if(val) {
+            $emailClear.style.display = "block"; 
+          } else {
+            $emailClear.style.display = "none";
+          }
           if (!ptnEmail.test(val)) {
             $errEmail.textContent = '이메일 주소가 올바르지 않습니다.'
             flagEmail = false;
@@ -303,7 +398,26 @@
           checkboxes.forEach((checkbox) => {
             checkbox.checked = $policyAll.checked;
           });
+          if ($privacy.checked && $siteUse.checked && $joinAge.checked) {
+            flagPolicy = true;
+            btnAble();
+          } else {
+            flagPolicy = false;
+            btnAble();
+          }
         });
+        $joinAge.addEventListener('click', isPolicyAgree);
+        $privacy.addEventListener('click', isPolicyAgree);
+        $siteUse.addEventListener('click', isPolicyAgree);
+        $idClear.addEventListener('click', clearValue);
+        $pwClear.addEventListener('click', clearValue);
+        $checkClear.addEventListener('click', clearValue);
+        $pwVisible.addEventListener('click',pwVisible);
+        $checkVisible.addEventListener('click',pwVisible);
+        $pwVisibleOff.addEventListener('click',pwVisibleOff);
+        $checkVisibleOff.addEventListener('click',pwVisibleOff);
+        $emailClear.addEventListener('click', clearValue);
+
         </script>
     
     <!-- FOOTER -->

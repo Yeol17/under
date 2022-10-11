@@ -16,7 +16,14 @@ input[type="text"], input[type="password"] {
 .cor {
   color: green;
 }
-
+.material-symbols-outlined {
+  
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}
 
 
 /* HEADER */
@@ -59,6 +66,18 @@ input[type="text"], input[type="password"] {
 .membership_join_id {
   height: 100px;
 }
+.input-wrap {
+  position: relative;
+}
+.input-wrap .clear-btn {
+  font-size: 2.0em;
+  color: #999;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: none;
+  cursor: pointer;
+}
 .membership_join_id .necessary {
   position: relative;
   margin-bottom: 4px;
@@ -66,21 +85,49 @@ input[type="text"], input[type="password"] {
 .membership_join_id .err-id {
   width: 100%;
   height: 20px;
-  font-size: 10px;
+  font-size: 12px;
   
 }
 .membership_join_pw {
   height: 170px;
 } 
+
+.membership_join_pw .input-wrap .pw-visible_off,
+.membership_join_pw .input-wrap .check-visible_off,
+.membership_join_pw .input-wrap .pw-visible,
+.membership_join_pw .input-wrap .check-visible {
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #999;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  
+}
+.membership_join_pw .input-wrap .pw-visible_off,
+.membership_join_pw .input-wrap .check-visible_off {
+  display: none;
+}
+
+.membership_join_pw .input-wrap .clear-btn {
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #999;
+  position: absolute;
+  right: 50px;
+  top: 12px;
+  display: none;
+}
 .membership_join_pw>input:nth-child(1) {
   margin-bottom: 10px;
 }
 .membership_join_pw .err-pw {
-  font-size: 10px;
-  height: 20px;
+  font-size: 12px;
+  /* height: 20px; */
+  margin-bottom: 4px;
 }
 .membership_join_pw .pw-check-msg {
-  font-size: 10px;
+  font-size: 12px;
   color: red;
 }
 
@@ -98,7 +145,7 @@ input[type="text"], input[type="password"] {
   height: 100px;
 }
 .membership_join_mail .err-email {
-  font-size: 10px;
+  font-size: 12px;
   color: red;
 }
 .membership_join_mail .necessary {
