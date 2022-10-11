@@ -145,7 +145,7 @@
               <input type="text" id="user-email">
               <span class="material-symbols-outlined clear-btn email-clear">cancel</span>
               <div class="err-email"></div>
-            <div>
+            </div>
           </div>  
           <div class="membership_policy_agreement flex_box">
               <div class="policy_all_agreement flex_box">
@@ -243,12 +243,17 @@
         }
         function clearValue(e) {
           let val = e.target;
+          console.log(val)
+          if (val.previousElementSibling === $pwCheck) {
+            val.nextElementSibling.textContent = "";
+          } else {
+            val.nextElementSibling.textContent = "필수 입력사항입니다.";
+          }
           val.style.display = "none";
           val.previousElementSibling.focus();
           val.previousElementSibling.value = '';
           val.nextElementSibling.classList.remove('cor');
           val.nextElementSibling.classList.add('err');
-          val.nextElementSibling.textContent = "필수 입력사항입니다.";
         }
         function pwVisible(e){
           let val = e.target;
@@ -306,7 +311,7 @@
             return;
           }
           if (!val) {
-            $errId.textContent = '필수 입력사항입니다.'
+            // $errId.textContent = '필수 입력사항입니다.'
             flagId = false;
             return;
           }       
@@ -338,12 +343,12 @@
         $userPw.addEventListener('blur', (e) => {
           let val = e.target.value;
           if (!val) { 
-            $errPw.textContent = '필수 입력사항입니다.';
+            // $errPw.textContent = '필수 입력사항입니다.';
             flagPw = false;
             return;
           }
           if (val && val !== $pwCheck.value) {
-            $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.1';
+            // $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.1';
             flagPw = false;
           } else { // 유효성 검사 통과
             $pwCheckMsg.textContent = '';
@@ -354,25 +359,26 @@
           let val = e.target.value;
           if(val) {
             $checkClear.style.display = "block"; 
+            if (val !== $userPw.value) {
+              $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.';
+              flagPw = false;
+            } else { // 유효성 검사 통과
+              $pwCheckMsg.textContent = '';
+              flagPw = true;
+              btnAble();
+            }
           } else {
             $checkClear.style.display = "none";
           }
         });
-        $pwCheck.addEventListener('blur', (e) => {
-          let val = e.target.value;
-          console.log(val);
-          if (val !== $userPw.value) {
-            $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.';
-            flagPw = false;
-          } else { // 유효성 검사 통과
-            $pwCheckMsg.textContent = '';
-            flagPw = true;
-            btnAble();
-          }
-        });
+        // $pwCheck.addEventListener('blur', (e) => {
+        //   let val = e.target.value;
+        //   console.log(val);
+          
+        // });
         $userEmail.addEventListener('blur', (e) => {
           if (!e.target.value) {
-            $errEmail.textContent = '필수 입력사항입니다.'
+            $errEmail.textContent = '필수 입력사항입니다.1'
             flagEmail = false;
 
           }

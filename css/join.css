@@ -65,6 +65,7 @@ input[type="text"], input[type="password"] {
 }
 .membership_join_id {
   height: 100px;
+  /* margin-bottom: 4px; */
 }
 .input-wrap {
   position: relative;
@@ -91,7 +92,9 @@ input[type="text"], input[type="password"] {
 .membership_join_pw {
   height: 170px;
 } 
-
+.membership_join_pw div:nth-child(2) {
+  margin-bottom: 5px;
+}
 .membership_join_pw .input-wrap .pw-visible_off,
 .membership_join_pw .input-wrap .check-visible_off,
 .membership_join_pw .input-wrap .pw-visible,
@@ -143,6 +146,7 @@ input[type="text"], input[type="password"] {
 } */
 .membership_join_mail {
   height: 100px;
+  margin-bottom: 10px;
 }
 .membership_join_mail .err-email {
   font-size: 12px;
