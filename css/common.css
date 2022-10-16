@@ -1,3 +1,4 @@
+
 /*common*/
 * {
   box-sizing: border-box;
@@ -298,15 +299,19 @@ button {
 .to_top {
   display: flex;
   position: fixed;
-  width: 42px;
-  height: 42px;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
   bottom: 30px;
   right: 30px;
-  background-color: #000;
-  color: #ccc;
+  background: #fff;
+  color: #333;
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 6px 2px rgb(60, 64, 67, .3);
   z-index: 90;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity .4s;
+  scroll
 }

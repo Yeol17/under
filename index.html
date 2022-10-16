@@ -22,6 +22,38 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/main.css">
 
+  <!-- SlickSlider -->
+  <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css"/> 
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      $('.mySlider').slick({
+        slide: 'li',
+        infinite : true,
+        slidesToShow: 1,
+        autoplay :true,
+        autoplaySpeed  : 2000,
+        pauseOnHover : true,
+        speed: 500,
+      });
+      
+      $('.container_best').slick({ 
+        slide: 'li',
+        infinite : true,
+        slidesToShow: 4,
+        slidesToScroll : 4,
+        // // autoplay :true,
+        autoplaySpeed  : 2000,
+        pauseOnHover : true,
+        speed: 500,
+      });
+
+    });
+  </script>
 <body>
   <!--HEADER-->
   <div class="wrap">
@@ -102,16 +134,10 @@
 
         <h2 class="hide">주요소식</h2>
 
-        <ul>
-          <li><a href="#none">내용1</a></li>
-          <!-- <li><a href="#">내용2</a></li>
-          <li><a href="#">내용3</a></li>
-          <li><a href="#">내용4</a></li>
-          <li><a href="#">내용5</a></li>
-          <li><a href="#">내용6</a></li>
-          <li><a href="#">내용7</a></li>
-          <li><a href="#">내용8</a></li>
-          <li><a href="#">내용9</a></li> -->
+        <ul class="mySlider">
+          <li><a href="#none"><img src="images/mainSlide_01.jpg" alt="슬라이드 이미지1"></a></li>
+          <li><a href="#none"><img src="images/mainSlide_02.jpg" alt="슬라이드 이미지2"></a></li>
+          <li><a href="#none"><img src="images/mainSlide_03.jpg" alt="슬라이드 이미지3"></a></li>
         </ul>
 
       </section>
@@ -231,7 +257,7 @@
           <ul class="container_best">
             <li class="product1">
               <a href="#none">
-                <div class="best_img"></div>
+                <div class="best_img"><img src="images/best_img1.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
                   <p class="name">카시오 시계 (A-158WA-1UWDF)</p>
                   <p class="line-through">20,000</p>
@@ -239,13 +265,12 @@
                     <p class="font_bold">15,000</p>
                     <p class="price_discount">25%</p>
                   </div>
-
                 </div>
               </a>
             </li>
             <li class="product2">
               <a href="#none">
-                <div class="best_img"></div>
+                <div class="best_img"><img src="images/best_img2.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
                   <p class="name">빅 트위치 로고 티셔츠 화이트</p>
                   <p class="line-through">35,000</p>
@@ -258,7 +283,7 @@
             </li>
             <li class="product3">
               <a href="#none">
-                <div class="best_img"></div>
+                <div class="best_img"><img src="images/best_img3.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
                   <p class="name">1952 bracelet - silver</p>
                   <p class="line-through">39,000</p>
@@ -271,7 +296,7 @@
             </li>
             <li class="product4">
               <a href="#none">
-                <div class="best_img"></div>
+                <div class="best_img"><img src="images/best_img4.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
                   <p class="name">MLB 야구모자</p>
                   <p class="line-through">48,000</p>
@@ -282,66 +307,59 @@
                 </div>
               </a>
             </li>
-            <!-- <li class="product5">
+            <li class="product5">
               <a href="#none">
-                <div class="product_img"></div>
+                <div class="best_img"><img src="images/best_img4.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
                   <p>카시오</p>
                   <p>20,000</p>
-                  <div class="price">
-                    <p>15,000</p>
-                    <p>25%</p>
+                  <div class="flex_box">
+                    <p class="font_bold">15,000</p>
+                    <p class="price_discount">25%</p>
                   </div>
                 </div>
               </a>
             </li>
             <li class="product6">
               <a href="#none">
-                <div class="product_img"></div>
+                <div class="best_img"><img src="images/best_img3.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
                   <p>카시오</p>
                   <p>20,000</p>
-                  <div class="price">
-                    <p>15,000</p>
-                    <p>25%</p>
+                  <div class="flex_box">
+                    <p class="font_bold">15,000</p>
+                    <p class="price_discount">25%</p>
                   </div>
                 </div>
               </a>
             </li>
             <li class="product7">
               <a href="#none">
-                <div class="product_img"></div>
+                <div class="best_img"><img src="images/best_img2.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
                   <p>카시오</p>
                   <p>20,000</p>
-                  <div class="price">
-                    <p>15,000</p>
-                    <p>25%</p>
+                  <div class="flex_box">
+                    <p class="font_bold">15,000</p>
+                    <p class="price_discount">25%</p>
                   </div>
                 </div>
               </a>
             </li>
             <li class="product8">
               <a href="#none">
-                <div class="product_img"></div>
+                <div class="best_img"><img src="images/best_img1.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
                   <p>카시오</p>
                   <p>20,000</p>
-                  <div class="price">
-                    <p>15,000</p>
-                    <p>25%</p>
+                  <div class="flex_box">
+                    <p class="font_bold">15,000</p>
+                    <p class="price_discount">25%</p>
                   </div>
                 </div>
               </a>
-            </li> -->
+            </li>
           </ul>
-
-          <div class="btn_prev">
-            <span class="material-symbols-outlined">arrow_back_ios</span>
-          </div>
-          <div class="btn_next">
-            <span class="material-symbols-outlined">arrow_forward_ios</span>
-          </div>
 
         </section>
       </div>
@@ -381,7 +399,7 @@
 
         <ul class="list_name flex_box">
           <li class="all">
-            <a href="#"><span class="font_bold">전체</span></a>
+            <a href="#none">전체</span></a>
           </li>
           <li><a href="javascript:void(0)">아우터</a></li>
           <li><a href="javascript:void(0)">상의</a></li>
@@ -389,139 +407,802 @@
           <li><a href="javascript:void(0)">신발</a></li>
           <li><a href="javascript:void(0)">악세사리</a></li>
         </ul>
-        <ul class="all_product flex_box">
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product1_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product2_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product3_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product4_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product5_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product6_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product7_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product8_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product9_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <div class="product10_img"></div>
-              <div class="product_info">
-                <p class="name">피그먼트 워싱 맨투맨</p>
-                <p class="line-through">63,000</p>
-                <div class="flex_box">
-                  <p class="font_bold">55,440</p>
-                  <p class="price_discount">12%</p>
-                </div>
-              </div>
-            </a>
-          </li>
 
-        </ul>
+        <div class="list_wrap">
+
+          <ul class="all_product flex_box">
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product1_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product2_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product3_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product4_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product5_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product6_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product7_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product8_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product9_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product10_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul class="all_product flex_box">
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product10_img"><img src="images/product_img11.jpg" alt=""></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product2_img"><img src="images/product_img12.jpg" alt=""></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product3_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product4_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product5_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product6_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product7_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product8_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product9_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product10_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul class="all_product flex_box">
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product1_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product2_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product3_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product4_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product5_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product6_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product7_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product8_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product9_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product10_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul class="all_product flex_box">
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product1_img"><img src="images/product_img13.jpg" alt=""></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product2_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product3_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product4_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product5_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product6_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product7_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product8_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product9_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product10_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul class="all_product flex_box">
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product1_img"><img src="images/product_img14.jpg" alt=""></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product2_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product3_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product4_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product5_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product6_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product7_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product8_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product9_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product10_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul class="all_product flex_box">
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product1_img"><img src="images/product_img15.jpg" alt=""></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product2_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product3_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product4_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product5_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product6_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product7_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product8_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product9_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">
+                <div class="product10_img"></div>
+                <div class="product_info">
+                  <p class="name">피그먼트 워싱 맨투맨</p>
+                  <p class="line-through">63,000</p>
+                  <div class="flex_box">
+                    <p class="font_bold">55,440</p>
+                    <p class="price_discount">12%</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
 
         <div class="btn_more">+ 더보기</div>
 
@@ -572,6 +1253,7 @@
     let $menuDepsLi = document.querySelector('.main_menu>li:nth-child(4)');
     let $subMenu = document.querySelector('.sub_menu');
     let scrollY = '';
+    let toTop = document.getElementById('to-top');
 
     $menuDepsLi.addEventListener('mouseover', function(e) {
       $subMenu.classList.add('deps2');
@@ -581,8 +1263,26 @@
     });
     window.addEventListener('scroll', function() {
       scrollY = window.pageYOffset;
+      if (scrollY < 300) {
+        toTop.style.opacity = 0;
+      } else {
+        toTop.style.opacity = 1;
+      }
+    });
+    toTop.addEventListener('click', function() {
+      window.scrollTo(0, 0);
     });
     
+    $('.list_name>li').click(function() {
+      $(this).addClass('all');
+      $(this).siblings().removeClass('all');
+      let idx = $(this).index();
+      let listItem = $('.list_wrap>ul').eq(idx);
+      console.log(listItem);
+      $(listItem).css('visibility', 'visible');
+      $(listItem).siblings().css('visibility', 'hidden');
+    });
+
 
   </script>
 </body>
