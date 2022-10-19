@@ -28,7 +28,7 @@ input[type="text"], input[type="password"] {
 
 /* HEADER */
 .header_wrap {
-  box-shadow: 0 3px 6px 2px rgb(60, 67, 60, .9);
+  /* box-shadow: 0 3px 6px 2px rgb(60, 67, 60, .9); */
   border-bottom: 1px solid #f1f1f1;
 }
 
@@ -36,7 +36,6 @@ input[type="text"], input[type="password"] {
 
 .content {
   background: #f1f1f1;
-  height: 100vh;
   margin: 0 auto;
 }
 .join {
@@ -44,7 +43,7 @@ input[type="text"], input[type="password"] {
   height: 100%;
   background: #fff;
   margin: auto;
-  padding: 100px 60px 0;
+  padding: 100px 60px;
 }
 .join_logo {
   width: 110px;

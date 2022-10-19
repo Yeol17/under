@@ -24,109 +24,92 @@
 
   <!-- SlickSlider -->
   <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css"/> 
-
+  <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick-theme.css"/>
+  
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-  <script>
-    $(document).ready(function(){
-
-      $('.mySlider').slick({
-        slide: 'li',
-        infinite : true,
-        slidesToShow: 1,
-        autoplay :true,
-        autoplaySpeed  : 2000,
-        pauseOnHover : true,
-        speed: 500,
-      });
-      
-      $('.container_best').slick({ 
-        slide: 'li',
-        infinite : true,
-        slidesToShow: 4,
-        slidesToScroll : 4,
-        // // autoplay :true,
-        autoplaySpeed  : 2000,
-        pauseOnHover : true,
-        speed: 500,
-      });
-
-    });
-  </script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="/slick-1.8.1/slick/slick.min.js"></script>
+ 
+  
+</head>
 <body>
   <!--HEADER-->
   <div class="wrap">
-    <header id="header" class="header">
+    <div class="header_wrap">
+      <div class="header_bg"></div>
+    
+      <header id="header" class="header">
 
-      <h1 class="logo"><a href="index.html">언더70</a></h1>
+        <div class="header-inner">
 
-      <nav class="gnb">
+          <h1 class="logo"><a href="index.html">언더70</a></h1>
+          
+          <nav class="gnb">
 
-        <h2 class="hide">주요메뉴</h2>
-        <ul class="main_menu">
-          <li><a href="#index.html">HOME</a></li>
-          <li><a href="#none">NEW</a></li>
-          <li><a href="#none">BEST</a></li>
-          <li>
-            <a href="#none">PRODUCT</a>
-            <div class="sub-wrap">
-              <ul class="sub_menu">
-                <li>
-                  <h3>PRODUCT</h3>
-                </li>
-                <li class="flex_box">
-                  <ul>
-                    <li><a href="#" class="category mgbt10">아우터</a></li>
-                    <li><a href="#" class="category">상의</a></li>
-                    <li><a href="#">긴팔</a></li>
-                    <li><a href="#">반팔</a></li>
-                    <li><a href="#">스웻셔츠</a></li>
-                    <li><a href="#">후드티</a></li>
-                    <li><a href="#">셔츠</a></li>
-                    <li><a href="#" class="mgbt10">니트</a></li>
+            <h2 class="hide">주요메뉴</h2>
+            <ul class="main_menu">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="#none">NEW</a></li>
+              <li><a href="#none">BEST</a></li>
+              <li>
+                <a href="#none">PRODUCT</a>
+                <div class="sub-wrap">
+                  <ul class="sub_menu">
+                    <li>
+                      <h3>PRODUCT</h3>
+                    </li>
+                    <li class="flex_box">
+                      <ul>
+                        <li><a href="#" class="category mgbt10">아우터</a></li>
+                        <li><a href="#" class="category">상의</a></li>
+                        <li><a href="#">긴팔</a></li>
+                        <li><a href="#">반팔</a></li>
+                        <li><a href="#">스웻셔츠</a></li>
+                        <li><a href="#">후드티</a></li>
+                        <li><a href="#">셔츠</a></li>
+                        <li><a href="#" class="mgbt10">니트</a></li>
+                      </ul>
+                      <ul>
+                        <li><a href="#" class="category">신발</a></li>
+                        <li><a href="#" class="category">하의</a></li>
+                        <li><a href="#">청바지</a></li>
+                        <li><a href="#">면바지</a></li>
+                        <li><a href="#">슬랙스</a></li>
+                        <li><a href="#">와이드핏</a></li>
+                        <li><a href="#" class="mgbt10">밴딩팬츠</a></li>
+                        <li><a href="#" class="category">악세사리</a></li>
+                      </ul>
+                    </li>
+                    <li class="sub_menu_bg"></li>
                   </ul>
-                  <ul>
-                    <li><a href="#" class="category">신발</a></li>
-                    <li><a href="#" class="category">하의</a></li>
-                    <li><a href="#">청바지</a></li>
-                    <li><a href="#">면바지</a></li>
-                    <li><a href="#">슬랙스</a></li>
-                    <li><a href="#">와이드핏</a></li>
-                    <li><a href="#" class="mgbt10">밴딩팬츠</a></li>
-                    <li><a href="#" class="category">악세사리</a></li>
-                  </ul>
-                </li>
-                <li class="sub_menu_bg flex_box"></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#none">LOOKBOOK</a></li>
-          <li><a href="#none">Q/A</a></li>
-          <li><a href="#none">REVIEW</a></li>
-        </ul>
+                </div>
+              </li>
+              <li><a href="#none">LOOKBOOK</a></li>
+              <li><a href="#none">Q/A</a></li>
+              <li><a href="#none">REVIEW</a></li>
+            </ul>
 
-      </nav>
+          </nav>
 
 
-      <div class="utill_menu">
-        <h2 class="hide">유틸메뉴</h2>
-        <ul>
-          <li>
-            <a href="#none">
-              <span class="material-symbols-outlined">search</span>
-            </a>
-          </li>
-          <li><a href="login.html">로그인</a></li>
-          <li><a href="join.html">회원가입</a></li>
-          <li><a href="#none"><span class="like">좋아요</span></a></li>
-          <li><a href="#none">장바구니</a></li>
-        </ul>
-      </div>
-
-
-    </header>
-
+          <div class="utill_menu">
+            <h2 class="hide">유틸메뉴</h2>
+            <ul>
+              <li>
+                <a href="#none">
+                  <span class="material-symbols-outlined">search</span>
+                </a>
+              </li>
+              <li><a href="login.html">로그인</a></li>
+              <li><a href="join.html">회원가입</a></li>
+              <li><a href="#none"><span class="like">좋아요</span></a></li>
+              <li><a href="#none">장바구니</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    
+    </div>  
     <!--CONTENT-->
     <main id="main" class="content">
 
@@ -134,11 +117,13 @@
 
         <h2 class="hide">주요소식</h2>
 
-        <ul class="mySlider">
-          <li><a href="#none"><img src="images/mainSlide_01.jpg" alt="슬라이드 이미지1"></a></li>
-          <li><a href="#none"><img src="images/mainSlide_02.jpg" alt="슬라이드 이미지2"></a></li>
-          <li><a href="#none"><img src="images/mainSlide_03.jpg" alt="슬라이드 이미지3"></a></li>
-        </ul>
+        <div class="mySlider">
+          <div><a href="#none"><img src="images/mainSlide_01.jpg" alt="슬라이드 이미지1"></a></div>
+          <div><a href="#none"><img src="images/mainSlide_02.jpg" alt="슬라이드 이미지2"></a></div>
+          <div><a href="#none"><img src="images/mainSlide_03.jpg" alt="슬라이드 이미지3"></a></div>
+        </div>
+
+        <div class="main_navi"></div>
 
       </section>
 
@@ -173,11 +158,11 @@
       <section class="new_product">
 
         <h2 class="tit">WHAT'S NEW</h2>
-        <ul>
-          <li>
+        <ul class="new">
+          <li> <!-- 1 -->
             <a href="#none">
-              <div class="img1"></div>
-              <div class="text1">
+              <div class="img"><img src="images/new_01.jpg" alt=""></div>
+              <div class="text">
                 <p class="product">뉴 테이크 FULL KIT</p>
                 <p class="price"><span>49,680</span><span>69,000</span></p>
                 <p class="price_discount">28%</p>
@@ -186,10 +171,10 @@
             <div class="icon_like"></div>
             <div class="icon_bag"></div>
           </li>
-          <li>
+          <li> <!-- 2 -->
             <a href="#none">
-              <div class="img2"></div>
-              <div class="text2">
+              <div class="img"><img src="images/new_02.jpg" alt=""></div>
+              <div class="text">
                 <p class="product">미니 토스트 백</p>
                 <p class="price"><span>80,655</span><span>84,900</span></p>
                 <p class="price_discount">5%</p>
@@ -198,10 +183,10 @@
             <div class="icon_like"></div>
             <div class="icon_bag"></div>
           </li>
-          <li>
+          <li> <!-- 3 -->
             <a href="#none">
-              <div class="img3"></div>
-              <div class="text3">
+              <div class="img"><img src="images/new_03.jpg" alt=""></div>
+              <div class="text">
                 <p class="product">뉴 테이크 FULL KIT</p>
                 <p class="price"><span>49,680</span><span>69,000</span></p>
                 <p class="price_discount">28%</p>
@@ -210,10 +195,10 @@
             <div class="icon_like"></div>
             <div class="icon_bag"></div>
           </li>
-          <li>
+          <li> <!-- 4 -->
             <a href="#none">
-              <div class="img4"></div>
-              <div class="text4">
+              <div class="img"><img src="images/new_04.jpg" alt=""></div>
+              <div class="text">
                 <p class="product">블랙 미니 크로스 백</p>
                 <p class="price"><span>61,600</span><span>77,000</span></p>
                 <p class="price_discount">20%</p>
@@ -222,10 +207,110 @@
             <div class="icon_like"></div>
             <div class="icon_bag"></div>
           </li>
-          <li>
+          <li> <!-- 5 -->
             <a href="#none">
-              <div class="img5"></div>
-              <div class="text5">
+              <div class="img"><img src="images/new_05.jpg" alt=""></div>
+              <div class="text">
+                <p class="product">화이트 브라이들 백</p>
+                <p class="price"><span>78,000</span>
+                </p>
+                <p class="price_discount"></p>
+              </div>
+            </a>
+            <div class="icon_like"></div>
+            <div class="icon_bag"></div>
+          </li>
+          <li> <!-- 6 -->
+            <a href="#none">
+              <div class="img"><img src="images/new_06.jpg" alt=""></div>
+              <div class="text">
+                <p class="product">뉴 테이크 FULL KIT</p>
+                <p class="price"><span>49,680</span><span>69,000</span></p>
+                <p class="price_discount">28%</p>
+              </div>
+            </a>
+            <div class="icon_like"></div>
+            <div class="icon_bag"></div>
+          </li>
+          <li> <!-- 7 -->
+            <a href="#none">
+              <div class="img"><img src="images/new_07.jpg" alt=""></div>
+              <div class="text">
+                <p class="product">미니 토스트 백</p>
+                <p class="price"><span>80,655</span><span>84,900</span></p>
+                <p class="price_discount">5%</p>
+              </div>
+            </a>
+            <div class="icon_like"></div>
+            <div class="icon_bag"></div>
+          </li>
+          <li> <!-- 8 -->
+            <a href="#none">
+              <div class="img"><img src="images/new_08.jpg" alt=""></div>
+              <div class="text">
+                <p class="product">뉴 테이크 FULL KIT</p>
+                <p class="price"><span>49,680</span><span>69,000</span></p>
+                <p class="price_discount">28%</p>
+              </div>
+            </a>
+            <div class="icon_like"></div>
+            <div class="icon_bag"></div>
+          </li>
+          <li> <!-- 9 -->
+            <a href="#none">
+              <div class="img"><img src="images/new_09.jpg" alt=""></div>
+              <div class="text">
+                <p class="product">블랙 미니 크로스 백</p>
+                <p class="price"><span>61,600</span><span>77,000</span></p>
+                <p class="price_discount">20%</p>
+              </div>
+            </a>
+            <div class="icon_like"></div>
+            <div class="icon_bag"></div>
+          </li>
+          <li> <!-- 10 -->
+            <a href="#none">
+              <div class="img"><img src="images/new_10.jpg" alt=""></div>
+              <div class="text">
+                <p class="product">화이트 브라이들 백</p>
+                <p class="price"><span>78,000</span>
+                </p>
+                <p class="price_discount"></p>
+              </div>
+            </a>
+            <div class="icon_like"></div>
+            <div class="icon_bag"></div>
+          </li>
+          <li> <!-- 11 -->
+            <a href="#none">
+              <div class="img"><img src="images/new_11.jpg" alt=""></div>
+              <div class="text">
+                <p class="product">화이트 브라이들 백</p>
+                <p class="price"><span>78,000</span>
+                </p>
+                <p class="price_discount"></p>
+              </div>
+            </a>
+            <div class="icon_like"></div>
+            <div class="icon_bag"></div>
+          </li>
+          <li> <!-- 12 -->
+            <a href="#none">
+              <div class="img"><img src="images/new_12.jpg" alt=""></div>
+              <div class="text">
+                <p class="product">화이트 브라이들 백</p>
+                <p class="price"><span>78,000</span>
+                </p>
+                <p class="price_discount"></p>
+              </div>
+            </a>
+            <div class="icon_like"></div>
+            <div class="icon_bag"></div>
+          </li>
+          <li> <!-- 13 -->
+            <a href="#none">
+              <div class="img"><img src="images/new_13.jpg" alt=""></div>
+              <div class="text">
                 <p class="product">화이트 브라이들 백</p>
                 <p class="price"><span>78,000</span>
                 </p>
@@ -238,13 +323,6 @@
 
         </ul>
 
-        <div class="btn_prev">
-          <span class="material-symbols-outlined">arrow_back_ios</span>
-        </div>
-        <div class="btn_next">
-          <span class="material-symbols-outlined">arrow_forward_ios</span>
-        </div>
-
       </section>
 
 
@@ -254,7 +332,7 @@
 
           <h2 class="tit">WEEKLY BEST</h2>
 
-          <ul class="container_best">
+          <ul class="container_best ">
             <li class="product1">
               <a href="#none">
                 <div class="best_img"><img src="images/best_img1.jpg" alt="카시오 시계"></div>
@@ -307,12 +385,14 @@
                 </div>
               </a>
             </li>
+          </ul>
+          <ul class="container_best">
             <li class="product5">
               <a href="#none">
                 <div class="best_img"><img src="images/best_img4.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
-                  <p>카시오</p>
-                  <p>20,000</p>
+                  <p class="name">카시오</p>
+                  <p class="line-through">20,000</p>
                   <div class="flex_box">
                     <p class="font_bold">15,000</p>
                     <p class="price_discount">25%</p>
@@ -324,8 +404,8 @@
               <a href="#none">
                 <div class="best_img"><img src="images/best_img3.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
-                  <p>카시오</p>
-                  <p>20,000</p>
+                  <p class="name">카시오</p>
+                  <p class="line-through">20,000</p>
                   <div class="flex_box">
                     <p class="font_bold">15,000</p>
                     <p class="price_discount">25%</p>
@@ -337,8 +417,8 @@
               <a href="#none">
                 <div class="best_img"><img src="images/best_img2.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
-                  <p>카시오</p>
-                  <p>20,000</p>
+                  <p class="name">카시오</p>
+                  <p class="line-through">20,000</p>
                   <div class="flex_box">
                     <p class="font_bold">15,000</p>
                     <p class="price_discount">25%</p>
@@ -350,8 +430,8 @@
               <a href="#none">
                 <div class="best_img"><img src="images/best_img1.jpg" alt="카시오 시계"></div>
                 <div class="product_info">
-                  <p>카시오</p>
-                  <p>20,000</p>
+                  <p class="name">카시오</p>
+                  <p class="line-through">20,000</p>
                   <div class="flex_box">
                     <p class="font_bold">15,000</p>
                     <p class="price_discount">25%</p>
@@ -371,23 +451,25 @@
         <h2 class="tit">LOOKBOOK</h2>
 
         <ul class="wrap_lookbook">
-          <li>
-            <a href="#none">룩북1</a>
+          <li class="slide">
+            <a href="#none">룩북1<img src="images/lookbook_01.jpg"></a>
           </li>
-          <li>
-            <a href="#none">룩북2</a>
+          <li class="slide">
+            <a href="#none">룩북2<img src="images/lookbook_02.jpg"></a>
           </li>
-          <li>
-            <a href="#none">룩북3</a>
+          <li class="slide">
+            <a href="#none">룩북3<img src="images/lookbook_03.jpg"></a>
+          </li>
+          <li class="slide">
+            <a href="#none">룩북4<img src="images/lookbook_04.jpg"></a>
+          </li>
+          <li class="slide">
+            <a href="#none">룩북5<img src="images/lookbook_05.jpg"></a>
+          </li>
+          <li class="slide">
+            <a href="#none">룩북6<img src="images/lookbook_06.jpg"></a>
           </li>
         </ul>
-
-        <div class="btn_prev">
-          <span class="material-symbols-outlined">arrow_back_ios</span>
-        </div>
-        <div class="btn_next">
-          <span class="material-symbols-outlined">arrow_forward_ios</span>
-        </div>
 
       </section>
 
@@ -1250,27 +1332,52 @@
   </div>
   
   <script>
+    let $headerWrap = document.querySelector('.header_wrap');
+    let $header = document.querySelector('.header');
+    let $headerBg = document.querySelector('.header_bg');
     let $menuDepsLi = document.querySelector('.main_menu>li:nth-child(4)');
+    let $subWrap = document.querySelector('.sub-wrap');
     let $subMenu = document.querySelector('.sub_menu');
     let scrollY = '';
     let toTop = document.getElementById('to-top');
 
     $menuDepsLi.addEventListener('mouseover', function(e) {
       $subMenu.classList.add('deps2');
+      $subWrap.classList.add('deps2', 'border');
     });
     $menuDepsLi.addEventListener('mouseout', function(e) {
       $subMenu.classList.remove('deps2');
+      $subWrap.classList.remove('deps2', 'border');
     });
     window.addEventListener('scroll', function() {
       scrollY = window.pageYOffset;
+      console.log(scrollY);
+      
+      console.log($('.mySlider').getCurrent);
       if (scrollY < 300) {
         toTop.style.opacity = 0;
       } else {
         toTop.style.opacity = 1;
       }
+      
+      if(scrollY >= 300) {
+        $header.style.height = '75px';
+        $headerWrap.style.top = 0;
+        $headerBg.style.transform = 'scaleX(1)';
+        // $header.classList.add('fixed')
+        // $subWrap.style.top = '77px';
+        return;
+      }
+      if (scrollY === 0) {
+        $headerBg.style.transform = 'scaleX(.7)';
+        $headerWrap.style.top = '10px';
+        $header.style.height = '90px';
+        
+      }
+
     });
     toTop.addEventListener('click', function() {
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 1);
     });
     
     $('.list_name>li').click(function() {
@@ -1284,6 +1391,55 @@
     });
 
 
+  </script>
+  <script>
+    $(document).ready(function(){
+
+      $('.mySlider').slick({
+        slide: 'div',
+        infinite : true,
+        autoplay :true,
+        autoplaySpeed  : 2000,
+        pauseOnHover : true,
+        speed: 500,
+        dots: true,
+        appendDots: $('.main_navi'),
+      });
+      let $new = $('.new');
+      $new.slick({
+        slide: 'li',
+        // autoplay: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        speed: 500,
+      }); 
+        $('.new').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          
+        });
+
+      $('.best').slick({ 
+        slide: '.container_best',
+        infinite : true,
+        slidesToShow: 1,
+        // // autoplay :true,
+        autoplaySpeed  : 2000,
+        pauseOnHover : true,
+        speed: 500,
+        dots: true,
+        appendDots: $('.best')
+      });
+      
+      $('.wrap_lookbook').slick({ 
+        slide: '.slide',
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        appendDots: $('.wrap_lookbook'),
+      });
+
+      
+    });
   </script>
 </body>
 </html>

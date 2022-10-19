@@ -22,110 +22,117 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/login.css">
 
+  <script src="js/jquery-3.6.1.min.js"></script>
 <body>
   <!--HEADER-->
   
+<div class="wrap">
+  <div class="header_wrap">
+    <div class="header_bg"></div>
+  
     <header id="header" class="header">
 
-      <h1 class="logo"><a href="index.html">언더70</a></h1>
+      <div class="header-inner">
 
-      <nav class="gnb">
+        <h1 class="logo"><a href="index.html">언더70</a></h1>
+        
+        <nav class="gnb">
 
-        <h2 class="hide">주요메뉴</h2>
-        <ul class="main_menu">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#none">NEW</a></li>
-          <li><a href="#none">BEST</a></li>
-          <li>
-            <a href="#none">PRODUCT</a>
-            <div class="sub_menu">
-              <div class="sub_wrap">
-                <div class="list_wrap">
-                  <h3>PRODUCT</h3>
-                  <ul class="sub_list1">
-                    <li><a href="#" class="category margin_16">아우터</a></li>
-                    <li><a href="#" class="category">상의</a></li>
-                    <li><a href="#">긴팔</a></li>
-                    <li><a href="#">반팔</a></li>
-                    <li><a href="#">스웻셔츠</a></li>
-                    <li><a href="#">후드티</a></li>
-                    <li><a href="#">셔츠</a></li>
-                    <li><a href="#" class="margin_16">니트</a></li>
-                    <li><a href="#" class="category">신발</a></li>
-                  </ul>
-                  <ul class="sub_list2">
-                    <li><a href="#" class="category">하의</a></li>
-                    <li><a href="#">청바지</a></li>
-                    <li><a href="#">면바지</a></li>
-                    <li><a href="#">슬랙스</a></li>
-                    <li><a href="#">와이드핏</a></li>
-                    <li><a href="#" class="margin_16">밴딩팬츠</a></li>
-                    <li><a href="#" class="category">악세사리</a></li>
-                  </ul>
-                </div>
+          <h2 class="hide">주요메뉴</h2>
+          <ul class="main_menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#none">NEW</a></li>
+            <li><a href="#none">BEST</a></li>
+            <li>
+              <a href="#none">PRODUCT</a>
+              <div class="sub-wrap">
+                <ul class="sub_menu">
+                  <li>
+                    <h3>PRODUCT</h3>
+                  </li>
+                  <li class="flex_box">
+                    <ul>
+                      <li><a href="#" class="category mgbt10">아우터</a></li>
+                      <li><a href="#" class="category">상의</a></li>
+                      <li><a href="#">긴팔</a></li>
+                      <li><a href="#">반팔</a></li>
+                      <li><a href="#">스웻셔츠</a></li>
+                      <li><a href="#">후드티</a></li>
+                      <li><a href="#">셔츠</a></li>
+                      <li><a href="#" class="mgbt10">니트</a></li>
+                    </ul>
+                    <ul>
+                      <li><a href="#" class="category">신발</a></li>
+                      <li><a href="#" class="category">하의</a></li>
+                      <li><a href="#">청바지</a></li>
+                      <li><a href="#">면바지</a></li>
+                      <li><a href="#">슬랙스</a></li>
+                      <li><a href="#">와이드핏</a></li>
+                      <li><a href="#" class="mgbt10">밴딩팬츠</a></li>
+                      <li><a href="#" class="category">악세사리</a></li>
+                    </ul>
+                  </li>
+                  <li class="sub_menu_bg"></li>
+                </ul>
               </div>
-              <ul class="sub_list_img">
-                <li></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#none">LOOKBOOK</a></li>
-          <li><a href="#none">Q/A</a></li>
-          <li><a href="#none">REVIEW</a></li>
-        </ul>
+            </li>
+            <li><a href="#none">LOOKBOOK</a></li>
+            <li><a href="#none">Q/A</a></li>
+            <li><a href="#none">REVIEW</a></li>
+          </ul>
 
-      </nav>
+        </nav>
 
 
-      <div class="utill_menu">
-        <h2 class="hide">유틸메뉴</h2>
-        <ul>
-          <li>
-            <a href="#none">
-              <span class="material-symbols-outlined">search</span>
-            </a>
-          </li>
-          <li><a href="login.html">로그인</a></li>
-          <li><a href="join.html">회원가입</a></li>
-          <li><a href="#none"><span class="like">좋아요</span></a></li>
-          <li><a href="#none">장바구니</a></li>
-        </ul>
+        <div class="utill_menu">
+          <h2 class="hide">유틸메뉴</h2>
+          <ul>
+            <li>
+              <a href="#none">
+                <span class="material-symbols-outlined">search</span>
+              </a>
+            </li>
+            <li><a href="login.html">로그인</a></li>
+            <li><a href="join.html">회원가입</a></li>
+            <li><a href="#none"><span class="like">좋아요</span></a></li>
+            <li><a href="#none">장바구니</a></li>
+          </ul>
+        </div>
       </div>
-
     </header>
+  
+  </div>
+  <!--CONTENT-->
 
+  <main id="main" class="content">
 
-    <div class="shadow-effect"></div>
-    <div class="wrap">
+    <section class="login">
 
+      <h2>로그인</h2>
 
-    <!--CONTENT-->
+      <ul class="login-type flex_box">
+        <li class="active"><a href="javascript:void(0)" class="mem_div">가입 회원</a></li>
+        <li><a href="javascript:void(0)" class="mem_div">비회원</a></li>
+      </ul>
 
-    <main id="main" class="content">
+      <div class="login-form">
 
-      <section class="login">
+        <div class="login-member">
+          <form action="tmp.html" method="post" class="member-form flex_box">
 
-        <h2>로그인</h2>
-        <ul class="flex_box">
-          <li><a href="javascript:void(0)" class="mem_div">가입 회원</a></li>
-          <li><a href="javascript:void(0)" class="mem_div">비회원</a></li>
-        </ul>
-        <div id="login_member" class="login_member">
-          <form action="tmp.html" method="post" class="flex_box">
-            <div class="login_form flex_box">
-              <div class="login_input_wrap">
-                <input type="text" name="id" required placeholder="아이디" titlle="아이디 입력" class="login_input">
-              </div>
-              <div class="login_input_wrap">
-                <input type="password" name="id" required placeholder="비밀번호" titlle="비밀번호 입력" class="login_input">
-              </div>
+            <div class="login_input_wrap">
+              <input type="text" name="id" required placeholder="아이디" titlle="아이디 입력" class="login_input">
+            </div>
+            <div class="login_input_wrap">
+              <input type="password" name="id" required placeholder="비밀번호" titlle="비밀번호 입력" class="login_input">
             </div>
             <div class="login_button">
               <button type="submit">로그인</button>
             </div>
             <div class="util flex_box">
               <div class="check_box">
-                <label for="auto-login"><input type="radio" name="" id="auto-login" class="auto-login">자동 로그인</label>
+                <input type="checkbox" name="auto-login" id="auto-login" class="auto-login">
+                <label for="auto-login">자동 로그인</label>
               </div>
               <ul class="util_list flex_box">
                 <li class="util_item"><a href="#none">아이디 찾기</a></li>
@@ -133,17 +140,36 @@
               </ul>
             </div>
           </form>
-          <div class="login_bottom">
-            <span class="login_bottom_text">회원 가입시 적립금 2,000원 적립</span>
-            <a href="join.html">회원가입</a>
-          </div>
         </div>
 
-      </section>
+        <div class="non-members">
+          <form action="get">
+            <fieldset>
+              <legend class="hide">비회원 주문</legend>
+              <label for="nonmember_name">주문자명</label>
+              <input type="text" name="nonmember_name" id="nonmember_name">
+              <label for="order_num">주문번호</label>
+              <input type="text" name="order_num" id="orde_num">
+          </fieldset> 
+          </form>
+          
+          <button type="button">주문 정보 조회</button>
+          
+        </div>
 
-    </main>
+      </div>
+      
+      <div class="login_bottom">
+        <span class="login_bottom_text">회원 가입시 적립금 2,000원 적립</span>
+        <a href="join.html">회원가입</a>
+      </div>
+      
+
+    </section>
     
-  </div>
+  </main>
+  
+
   
   <!-- FOOTER -->
   <div class="footer_wrap">
@@ -174,7 +200,22 @@
     
 
   </div>
-  
-</body>
+</div>
+  <script>
 
+  </script>
+</body>
+<script>
+  $(function() {
+    $('.login-type > li').on('click',function(e) {
+      let idx = $(this).index();
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      let $loginType = $('.login-form').children();
+      $loginType.eq(idx).siblings().css({display: 'none'})
+      $loginType.eq(idx).css({display: 'block'})
+    });
+  });
+    
+</script>
 </html>
