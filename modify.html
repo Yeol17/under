@@ -22,82 +22,89 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/modify.css">
 
+  <script src="js/common.js" defer></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 <body>
   <div class="wrap">
     <!--HEADER-->
     <div class="header_wrap">
+      <div class="header_bg"></div>
+    
       <header id="header" class="header">
 
-        <h1 class="logo"><a href="index.html">언더70</a></h1>
+        <div class="header-inner">
 
-        <nav class="gnb">
+          <h1 class="logo"><a href="index.html">언더70</a></h1>
+          
+          <nav class="gnb">
 
-          <h2 class="hide">주요메뉴</h2>
-          <ul class="main_menu">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="#none">NEW</a></li>
-            <li><a href="#none">BEST</a></li>
-            <li>
-              <a href="#none">PRODUCT</a>
-              <div class="sub_menu">
-                <div class="sub_wrap">
-                  <div class="list_wrap">
-                    <h3>PRODUCT</h3>
-                    <ul class="sub_list1">
-                      <li><a href="#" class="category margin_16">아우터</a></li>
-                      <li><a href="#" class="category">상의</a></li>
-                      <li><a href="#">긴팔</a></li>
-                      <li><a href="#">반팔</a></li>
-                      <li><a href="#">스웻셔츠</a></li>
-                      <li><a href="#">후드티</a></li>
-                      <li><a href="#">셔츠</a></li>
-                      <li><a href="#" class="margin_16">니트</a></li>
-                      <li><a href="#" class="category">신발</a></li>
-                    </ul>
-                    <ul class="sub_list2">
-                      <li><a href="#" class="category">하의</a></li>
-                      <li><a href="#">청바지</a></li>
-                      <li><a href="#">면바지</a></li>
-                      <li><a href="#">슬랙스</a></li>
-                      <li><a href="#">와이드핏</a></li>
-                      <li><a href="#" class="margin_16">밴딩팬츠</a></li>
-                      <li><a href="#" class="category">악세사리</a></li>
-                    </ul>
-                  </div>
+            <h2 class="hide">주요메뉴</h2>
+            <ul class="main_menu">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="#none">NEW</a></li>
+              <li><a href="#none">BEST</a></li>
+              <li>
+                <a href="#none">PRODUCT</a>
+                <div class="sub-wrap">
+                  <ul class="sub_menu">
+                    <li>
+                      <h3>PRODUCT</h3>
+                    </li>
+                    <li class="flex_box">
+                      <ul>
+                        <li><a href="#" class="category mgbt10">아우터</a></li>
+                        <li><a href="#" class="category">상의</a></li>
+                        <li><a href="#">긴팔</a></li>
+                        <li><a href="#">반팔</a></li>
+                        <li><a href="#">스웻셔츠</a></li>
+                        <li><a href="#">후드티</a></li>
+                        <li><a href="#">셔츠</a></li>
+                        <li><a href="#" class="mgbt10">니트</a></li>
+                      </ul>
+                      <ul>
+                        <li><a href="#" class="category">신발</a></li>
+                        <li><a href="#" class="category">하의</a></li>
+                        <li><a href="#">청바지</a></li>
+                        <li><a href="#">면바지</a></li>
+                        <li><a href="#">슬랙스</a></li>
+                        <li><a href="#">와이드핏</a></li>
+                        <li><a href="#" class="mgbt10">밴딩팬츠</a></li>
+                        <li><a href="#" class="category">악세사리</a></li>
+                      </ul>
+                    </li>
+                    <li class="sub_menu_bg"></li>
+                  </ul>
                 </div>
-                <ul class="sub_list_img">
-                  <li></li>
-                </ul>
-              </div>
-            </li>
-            <li><a href="#none">LOOKBOOK</a></li>
-            <li><a href="#none">Q/A</a></li>
-            <li><a href="#none">REVIEW</a></li>
-          </ul>
+              </li>
+              <li><a href="#none">LOOKBOOK</a></li>
+              <li><a href="#none">Q/A</a></li>
+              <li><a href="#none">REVIEW</a></li>
+            </ul>
 
-        </nav>
+          </nav>
 
 
-        <div class="utill_menu">
-          <h2 class="hide">유틸메뉴</h2>
-          <ul>
-            <li>
-              <a href="#none">
-                <span class="material-symbols-outlined">search</span>
-              </a>
-            </li>
-            <li><a href="login.html">로그인</a></li>
-            <li><a href="join.html">회원가입</a></li>
-            <li><a href="#none"><span class="like">좋아요</span></a></li>
-            <li><a href="#none">장바구니</a></li>
-          </ul>
+          <div class="utill_menu">
+            <h2 class="hide">유틸메뉴</h2>
+            <ul>
+              <li>
+                <a href="#none">
+                  <span class="material-symbols-outlined">search</span>
+                </a>
+              </li>
+              <li><a href="login.html">로그인</a></li>
+              <li><a href="join.html">회원가입</a></li>
+              <li><a href="#none"><span class="like">좋아요</span></a></li>
+              <li><a href="#none">장바구니</a></li>
+            </ul>
+          </div>
         </div>
-
       </header>
     
-
     </div>
-    <!-- <div class="shadow-effect"></div> -->
     
     <!--CONTENT-->
     <main id="main" class="content">
@@ -113,31 +120,31 @@
         </div>
         <div class="change_info">
 
-          <!-- <div class="info">
-            <form action="" >
+          <div class="info">
+            <form action="" method="get">
               <div class="cont1">
                 <div class="user_id col empty_right">
                   <label for="" class="input_label">아이디</label>
                   <div class="input_wrap">
-                    <input type="text" value="hsl0717" readonly>
+                    <input type="text" value="hsl0717" readonly class="read-only">
                   </div>
                 </div>
                 <div class="user_name col empty_right">
                   <label for="" class="input_label">이름</label>
                   <div class="input_wrap">
-                    <input type="text" value="한승열" readonly>
+                    <input type="text" value="한승열" readonly class="read-only">
                   </div>
                 </div>
                 <div class="user_gen col">
                   <label for="" class="input_label">성별</label>
                   <div class="input_wrap">
-                    <input type="text" value="남자" readonly>
+                    <input type="text" value="남자" readonly class="read-only">
                   </div>
                 </div>
                 <div class="user_birth col">
                   <label for="" class="input_label">생년월일</label>
                   <div class="input_wrap">
-                    <input type="text" value="1993년 07월 17일" readonly>
+                    <input type="text" value="1993년 07월 17일" readonly class="read-only">
                   </div>
                 </div>
               </div>
@@ -152,50 +159,53 @@
                   <label for="" class="input_label">휴대폰</label>
                   <div class="input_wrap">
                     <input type="tel" value="010-3466-5376 ">
-                    <button class="btn" id="">인증하기</button>
+                    <button class="btn" id="" type="button">인증하기</button>
                   </div>
                 </div>
-                <div class="user_adress col">
-                  <label for="" class="input_label">주소(선택)</label>
-                  <div class="input_wrap">
-                    <input type="text" value="">
-                    <button type="text" class="btn">주소변경</button>
+                <div class="user_adress">
+                  <label for="postcode" class="input_label">주소</label>
+                  <div class="input_wrap align">
+                    <input type="text" value="" id="postcode" readonly maxlength="20" class="read-only">
+                    <button type="button" class="btn change-post-code" type="button">주소검색</button>
                   </div>
-                  <div class="input_wrap">
-                    <input type="text" value="" placeholder="상세주소 입력" readonly>
-                    <button class="btn delete" id="" classs=""><img src="https://assets.kolonmall.com/_ui/img/pc/icn/icn-delete-4a9cc8147c.png" alt="상세주소 삭제 아이콘">삭제</button>
+                  <div class="input_wrap addr">
+                    <input type="text" id="address" value="" readonly class="read-only">
+                  </div>
+                  <div class="input_wrap addr">
+                    <input type="text" id="detailAddress" value="" placeholder="상세주소 입력" >
+                    <button class="btn delete" type="button"><img src="https://assets.kolonmall.com/_ui/img/pc/icn/icn-delete-4a9cc8147c.png" alt="상세주소 삭제 아이콘">삭제</button>
                   </div>
                 </div>
               </div>
               <div><a href="#none" class="leave_btn">회원탈퇴</a></div>
             </form>
-          </div> -->
+          </div>
 
           <div class="password">
             <form action="" method="post" class="form_check_pw">
               <div class="account_info">
-                <label for="password">
+                <label for="pw-now">
                   <div>현재 비밀번호</div>
                   <div class="pw_wrap">  
-                    <input type="password" name="pw" id="password" class="password_input" maxlength="15">
+                    <input type="password" name="pw" id="pw-now" class="password_input" maxlength="15">
                     <span class="placeholder">••••••••</span>
                   </div>
                 </label>
               </div>
               <div class="new_password_input">
-                <label for="password">
+                <label for="pw-new">
                   <div>새 비밀번호</div>
                   <div class="pw_wrap">  
-                    <input type="password" name="pw" id="password" class="password_input" maxlength="15">
+                    <input type="password" name="pw-new" id="pw-new" class="password_input" maxlength="15">
                     <span class="placeholder">••••••••</span>
                   </div>
                 </label>
               </div>
               <div class="confirm_password_input clearfix">
-                <label for="password">
+                <label for="pw-check">
                   <div>새 비밀번호 확인</div>
                   <div class="pw_wrap">  
-                    <input type="password" name="pw" id="password" class="password_input" maxlength="15">
+                    <input type="password" name="pw" id="pw-check" class="password_input" maxlength="15">
                     <span class="placeholder">••••••••</span>
                   </div>
                 </label>
@@ -218,8 +228,8 @@
             </form>
           </div>
           <div class="edit_done">
-            <a href="#none"><button class="btn">취소</button></a>
-            <a href="#none"><button class="btn">확인</button></a>
+            <a href="#none"><button class="btn" type="button">취소</button></a>
+            <a href="#none"><button class="btn" type="button">확인</button></a>
           </div>
         </div>
         
@@ -258,6 +268,98 @@
 
     </div>
   </div>
+  <script>
+    let $editUserInfo = document.getElementById('edit_user-info');
+    let $editUserPassword = document.getElementById('edit_user-password');
+    let $info = document.querySelector('.change_info > .info');
+    let $password = document.querySelector('.change_info > .password');
+    // change PostCode
+    let $changePostCode = document.querySelector('.change-post-code')
+    let $btnDelete = document.querySelector('button.delete');
+    let $postCode = document.getElementById('postcode');
+    let $adress = document.getElementById('address');
+    let $detailAddress = document.getElementById('detailAddress');
+    var width = 500;
+    var height = 600;
+    var themeObj = {
+      bgColor: "#F1F1F1",
+      searchBgColor: "#111", 
+      queryTextColor: "#FFFFFF",
+    };
+
+    function changeTab() {
+      if ($editUserInfo.checked) {
+        $info.style.display = 'block';
+        $password.style.display = 'none';
+        return;
+      }
+      if ($editUserPassword.checked) {
+        $info.style.display = 'none';
+        $password.style.display = 'block';
+        return;
+      }
+    }
+    function psCode() {
+      // 주소 검색
+      new daum.Postcode({
+        theme: themeObj,
+        width: width,
+        height: height,
+        popupKey: 'popup1',
+        maxSuggestItems: '5',
+        oncomplete: function(data) {
+            
+          var addr = ''; // 주소변수
+          var extraAddr = ''; // 참고 항목 변수
+
+          // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+          if (data.userSelectedType === 'R') { // 사용자가 도로면 주소를 선택했을 경우 (R)
+            addr = data.roadAddress;
+          } else { // 사용자가 지번 주소를 선택했을 경우(J)
+            addr = data.jibunAddress;
+          }
+          
+          // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+          if (data.userSelectedType === 'R') {
+            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+              extraAddr += data.bname;
+            }
+            // 건물명이 있고, 공동주택일 경우 추가한다.
+            if (data.buildingName !== '' && data.apartment === 'Y') {
+              extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+            }
+            //표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+            if (extraAddr !== '') {
+              extraAddr = ' (' + extraAddr + ')';
+            }
+          } else {
+            document.getElementById("address").valuee += '';
+          }
+          // 우편번호와 주소 정보를 해당 필드에 넣는다.
+          document.getElementById('postcode').value = `(${data.zonecode})`;
+          document.getElementById("address").value = addr + extraAddr;
+          // 커서를 상세주소 필드로 이동한다.
+          document.getElementById("detailAddress").focus();
+        },
+      }).open({
+        popupTitle: '우편번호 검색',
+        left: (window.innerWidth / 2) - (width / 2),
+        top: (window.innerHeight / 2) - (height / 2) + 100
+      });
+    }
+    
+    $editUserInfo.addEventListener('click', changeTab);
+    $editUserPassword.addEventListener('click', changeTab);
+    $changePostCode.addEventListener('click', psCode);
+    $btnDelete.addEventListener('click', (e) => {
+      $postCode.value = '';
+      $adress.value = '';
+      $detailAddress.value = '';
+    });
+
+  </script>
 </body>
 
 </html>

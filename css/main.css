@@ -58,6 +58,7 @@ a {
   top: 10px;
   transition: top .3s;
   background: transparent;
+  border: 0;
 }
 .header_bg {
   width: 100%;
@@ -200,7 +201,7 @@ _menu h3 {
   /* left: 0;
   right: 0; */
   overflow: hidden;
-  z-index: 10;
+  z-index: 10;margin-top: 0;
 }
 
 .main_images {
@@ -343,16 +344,35 @@ _menu h3 {
   margin: 0 auto;
   position: relative;
 }
-
-.new_product .new-slick {
-  height: 490px;
-  width: 1200px;
-  display: flex;
+.new_product .new {
+  position: relative;
+  z-index:10;
+}
+.new_product .new button.slick-prev,
+.new_product .new button.slick-next {
+  text-indent: -9999px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 20;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -20px;
+  box-shadow: 1px 3px 5px 1px rgba(0, 0, 0, .3);
+}
+.new_product .new .slick-prev {
+  background: url(../images/icn_prev.svg) no-repeat center;
+  left: -20px;
+}
+.new_product .new .slick-next {
+  background: url(../images/icn_next.svg) no-repeat 9px;
+  right: -20px;
 }
 
-.new_product ul li {
-  float: left;
-}
+/* .new_product .new li {
+  /* float: left; */
+/* } */ */
 
 .new_product .img {
   width: 200px;
@@ -545,7 +565,6 @@ justify-content: space-between;
 .product_list .list_name {
   width: 550px;
   margin-bottom: 16px;
-  
   font-size: 1.2em;
   justify-content: space-between;
 }
@@ -566,7 +585,7 @@ justify-content: space-between;
 
 .list_wrap {
   position: relative;
-  height: 801px;
+  height: 800px;
 }
 .list_wrap ul {
   visibility: hidden;
@@ -581,13 +600,18 @@ justify-content: space-between;
   border-top: 1px solid #ccc;
   width: 1200px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
 }
-.all_product>li{
-  width: 240px;
-  height: 380px;
+.all_product li {
+  padding: 8px;
+  transition: .3s;
+}
+.all_product li:hover {
+  box-shadow: 0 0 6px 0 rgba(100, 100, 100, 0.3);
 }
 
 .all_product .flex_box {
@@ -595,7 +619,6 @@ justify-content: space-between;
 }
 .all_product .product_info {
   width: 224px;
-  margin-right: 20px;
   padding: 12px 4px 0 4px;
 }
 .all_product .product_info .line-through {

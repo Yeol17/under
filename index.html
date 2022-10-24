@@ -26,6 +26,7 @@
   <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css"/> 
   <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick-theme.css"/>
   
+  <script src="js/common.js" defer></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="/slick-1.8.1/slick/slick.min.js"></script>
@@ -1321,7 +1322,12 @@
       </footer>
     </div>
     
-
+    <!-- MODAL -->
+    <div>
+      <div class="popup">
+        
+      </div>
+    </div>
     <!-- TO_TOP -->
     <div id="to-top" class="to_top">
       <span class="material-symbols-outlined">
@@ -1330,68 +1336,6 @@
     </div>
 
   </div>
-  
-  <script>
-    let $headerWrap = document.querySelector('.header_wrap');
-    let $header = document.querySelector('.header');
-    let $headerBg = document.querySelector('.header_bg');
-    let $menuDepsLi = document.querySelector('.main_menu>li:nth-child(4)');
-    let $subWrap = document.querySelector('.sub-wrap');
-    let $subMenu = document.querySelector('.sub_menu');
-    let scrollY = '';
-    let toTop = document.getElementById('to-top');
-
-    $menuDepsLi.addEventListener('mouseover', function(e) {
-      $subMenu.classList.add('deps2');
-      $subWrap.classList.add('deps2', 'border');
-    });
-    $menuDepsLi.addEventListener('mouseout', function(e) {
-      $subMenu.classList.remove('deps2');
-      $subWrap.classList.remove('deps2', 'border');
-    });
-    window.addEventListener('scroll', function() {
-      scrollY = window.pageYOffset;
-      console.log(scrollY);
-      
-      console.log($('.mySlider').getCurrent);
-      if (scrollY < 300) {
-        toTop.style.opacity = 0;
-      } else {
-        toTop.style.opacity = 1;
-      }
-      
-      if(scrollY >= 300) {
-        $header.style.height = '75px';
-        $headerWrap.style.top = 0;
-        $headerBg.style.transform = 'scaleX(1)';
-        // $header.classList.add('fixed')
-        // $subWrap.style.top = '77px';
-        return;
-      }
-      if (scrollY === 0) {
-        $headerBg.style.transform = 'scaleX(.7)';
-        $headerWrap.style.top = '10px';
-        $header.style.height = '90px';
-        
-      }
-
-    });
-    toTop.addEventListener('click', function() {
-      window.scrollTo(0, 1);
-    });
-    
-    $('.list_name>li').click(function() {
-      $(this).addClass('all');
-      $(this).siblings().removeClass('all');
-      let idx = $(this).index();
-      let listItem = $('.list_wrap>ul').eq(idx);
-      console.log(listItem);
-      $(listItem).css('visibility', 'visible');
-      $(listItem).siblings().css('visibility', 'hidden');
-    });
-
-
-  </script>
   <script>
     $(document).ready(function(){
 
@@ -1438,6 +1382,15 @@
         appendDots: $('.wrap_lookbook'),
       });
 
+      $('.list_name>li').click(function() {
+      $(this).addClass('all');
+      $(this).siblings().removeClass('all');
+      let idx = $(this).index();
+      let listItem = $('.list_wrap>ul').eq(idx);
+      console.log(listItem);
+      $(listItem).css('visibility', 'visible');
+      $(listItem).siblings().css('visibility', 'hidden');
+    });
       
     });
   </script>

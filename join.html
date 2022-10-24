@@ -20,9 +20,7 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/join.css">
 
-  <style>
-    
-    </style>
+  <script src="js/common.js" defer></script>
 <body>
   <div class="wrap">
     <!--HEADER-->
@@ -216,6 +214,7 @@
         let $joinAge = document.getElementById('join_age');
         let $privacy = document.getElementById('privacy');
         let $siteUse = document.getElementById('site_use');
+        let $marketing = document.getElementById('marketing');
         
         let flagId, flagPw, flagEmail, flagPolicy = false;
 
@@ -242,6 +241,11 @@
           } else {
             flagPolicy = false;
             btnAble();
+          }
+          if($privacy.checked && $siteUse.checked && $joinAge.checked && $marketing.checked) {
+            $policyAll.checked = true;
+          } else {
+            $policyAll.checked = false;
           }
         }
         function clearValue(e) {
@@ -412,12 +416,15 @@
             btnAble();
           } else {
             flagPolicy = false;
+            btnAble();
             // btnAble();
           }
         });
+
         $joinAge.addEventListener('click', isPolicyAgree);
         $privacy.addEventListener('click', isPolicyAgree);
         $siteUse.addEventListener('click', isPolicyAgree);
+        $marketing.addEventListener('click', isPolicyAgree)
         $idClear.addEventListener('click', clearValue);
         $pwClear.addEventListener('click', clearValue);
         $checkClear.addEventListener('click', clearValue);

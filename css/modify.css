@@ -1,4 +1,9 @@
-
+.read-only:focus {
+  border-bottom: 1px solid #dedede;
+}
+.align {
+  margin-right: 109px
+}
 input {
   outline: none;
   width: 100%;
@@ -61,8 +66,14 @@ input {
 }
 
 /* change */
-.change_info>form {
+.change_info {
   position: relative;
+}
+.change_info .info {
+  display: block;
+}
+.change_info .password {
+  display: none;
 }
 input[type="radio"]:checked+label{
   background-color: #1f1f1f;
@@ -79,10 +90,16 @@ input[type="radio"]:checked+label{
   width: 110px;
   line-height: 20px;
   padding: 10px 0;
+  float: left
 }
 .input_wrap {
   width: 306px;
   position: relative;
+  /* float: left; */
+}
+.input_wrap.addr {
+  width: 45%;
+  /* float: left */
 }
 .input_wrap input {
   height: 40px;
@@ -91,14 +108,13 @@ input[type="radio"]:checked+label{
   border-bottom: 1px solid #dedede;
   padding: 10px 0;
 }
-.user_name {
-}
-.cont2 {
-  height: 200px;
+
+.user_adress {
+  width: 100%;
+  float: left;
 }
 .user_adress .input_wrap:last-child {
-  width: 100%;
-  margin-top: 40px;
+  margin: 40px 0 0 40px;
 }
 /* .user_birth:after {
   content: "";
@@ -198,9 +214,8 @@ input:focus {
   height: 50px;
   line-height: 30px;
   font-size: 1.4em;
-  background-color: transparent;
+  /* background-color: transparent; */
   letter-spacing: 4px;
-  z-index: 20;
 }
 .pw_wrap {
   position: relative;
@@ -216,7 +231,6 @@ input:focus {
   line-height: 50px;
   font-size: 1.4em;
   letter-spacing: 4px;
-  z-index:10;
   display: block;
 }
 .policy_guide dt {

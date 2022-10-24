@@ -63,7 +63,9 @@ button {
 }
 
 /* tmp */
-
+.content {
+  margin-top: 75px;
+}
 
 /*HEADER*/
 /* .header_bg {
@@ -73,14 +75,14 @@ button {
   top: 0;
 } */
 .header_wrap {
-  position: relative;
+  position: fixed;
   background-color: #fff;
   width: 100%;
   min-width: 1200px;
   z-index: 999;
   left: 0;
-  top: 0;
   transition: top .3s;
+  border-bottom: 1px solid #d1d1d1;
 }
 .header {
   background-color: #fff;
