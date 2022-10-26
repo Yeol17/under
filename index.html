@@ -26,10 +26,11 @@
   <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css"/> 
   <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick-theme.css"/>
   
-  <script src="js/common.js" defer></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="/slick-1.8.1/slick/slick.min.js"></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/main.js" defer></script>
  
   
 </head>
@@ -50,7 +51,7 @@
             <h2 class="hide">주요메뉴</h2>
             <ul class="main_menu">
               <li><a href="index.html">HOME</a></li>
-              <li><a href="#none">NEW</a></li>
+              <li><a href="new.html">NEW</a></li>
               <li><a href="#none">BEST</a></li>
               <li>
                 <a href="#none">PRODUCT</a>
@@ -1336,63 +1337,5 @@
     </div>
 
   </div>
-  <script>
-    $(document).ready(function(){
-
-      $('.mySlider').slick({
-        slide: 'div',
-        infinite : true,
-        autoplay :true,
-        autoplaySpeed  : 2000,
-        pauseOnHover : true,
-        speed: 500,
-        dots: true,
-        appendDots: $('.main_navi'),
-      });
-      let $new = $('.new');
-      $new.slick({
-        slide: 'li',
-        // autoplay: true,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        speed: 500,
-      }); 
-        $('.new').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-          
-        });
-
-      $('.best').slick({ 
-        slide: '.container_best',
-        infinite : true,
-        slidesToShow: 1,
-        // // autoplay :true,
-        autoplaySpeed  : 2000,
-        pauseOnHover : true,
-        speed: 500,
-        dots: true,
-        appendDots: $('.best')
-      });
-      
-      $('.wrap_lookbook').slick({ 
-        slide: '.slide',
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        appendDots: $('.wrap_lookbook'),
-      });
-
-      $('.list_name>li').click(function() {
-      $(this).addClass('all');
-      $(this).siblings().removeClass('all');
-      let idx = $(this).index();
-      let listItem = $('.list_wrap>ul').eq(idx);
-      console.log(listItem);
-      $(listItem).css('visibility', 'visible');
-      $(listItem).siblings().css('visibility', 'hidden');
-    });
-      
-    });
-  </script>
 </body>
 </html>
