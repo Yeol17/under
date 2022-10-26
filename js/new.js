@@ -1,4 +1,4 @@
-let $lis = Array.from(document.querySelectorAll('.product-category__item'));
+let $as = Array.from(document.querySelectorAll('.product-category__item-title'));
 let active = 'product-category__item--active';
 
 function findElremoveClass(t, el, removeClass) {
@@ -12,12 +12,12 @@ function findElremoveClass(t, el, removeClass) {
 
 function tabClick(e) {
   e.stopPropagation();
-  let target = e.target.parentElement;
+  let target = e.target;
   console.log(target);
+  findElremoveClass(target, $as, active);
   target.classList.add(active);
-  findElremoveClass(target, $lis, active);
 }
 
-$lis.map(li => {
- li.addEventListener('click', tabClick);
+$as.map(a => {
+ a.addEventListener('click', tabClick);
 })

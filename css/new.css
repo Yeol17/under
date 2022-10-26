@@ -49,11 +49,11 @@
   padding-bottom: 17px;
   line-height: 1.2;
 }
-.product-category__item--active .product-category__item-title {
+.product-category__item--active.product-category__item--active {
   color: #000;
   font-weight: 700;
 }
-.product-category__item--active .product-category__item-title::after {
+.product-category__item--active::after {
   content: '';
   display: block;
   width: 5px;
