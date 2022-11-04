@@ -20,7 +20,14 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/join.css">
 
-  <script src="js/common.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/js/join.js" defer></script>
+  
+  <!-- POST CODE -->
+  <link rel="stylesheet" href="css/psCode.css">
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
+  <script src="js/psCode.js" defer></script>
+
 <body>
   <div class="wrap">
     <!--HEADER-->
@@ -138,6 +145,57 @@
               <div class="pw-check-msg"></div>
             </div>
           </div>
+          <div class="membership_join_name">
+            <label for="u_name">
+              <p class="necessary">이름</p>
+            </label>
+            <div class="input-wrap">
+              <input type="text" name="u_name" class="u_name" id="u_name">
+              <span class="material-symbols-outlined clear-btn">cancel</span>
+            </div>
+            <div class="err-name err"></div>
+          </div>
+          <div class="membership_join_birth">
+            <div class="birth-title">
+              <label for="birth" class="necessary">생년월일</label>
+            </div>
+            <div class="birth-wrap">
+              <div class="birth-yy">
+                <input type="text" placeholder="년(4자)" name="year" class="year" id="year" maxlength="4">
+              </div>
+              <div class="birth-mm">
+                <select id="month" name="month" class="month">
+                  <option value="">월</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+              <div class="birth-dd">
+                <input type="text" placeholder="일" name="dd" id="dd">
+              </div>
+            </div>
+          </div>
+          <div class="membership_join_gender">
+            <p class="necessary">성별</p>
+            <div class="gen-choice">
+              <select name="gender" id="gender" class="gender">
+                <option value="">성별</option>
+                <option value="m">남자</option>
+                <option value="f">여자</option>
+                <option value="n">선택안함</option>
+              </select>
+            </div>
+          </div>
           <div class="membership_join_mail">
             <label for="user-email">
               <p class="necessary">이메일</p>
@@ -148,6 +206,29 @@
               <div class="err-email"></div>
             </div>
           </div>  
+          <div class="membership_join_mobile">
+            <label for="mobile" class="mobile">
+              <p class="necessary">전화번호</p>
+            </label>
+            <div class="input-wrap">
+              <input type="text" name="mobile" class="mobile" id="mobile">
+            </div>
+          </div>
+          <div class="membership_join_addr">
+            <label for="ps_code" class="ps-code">
+              <p class="necessary">주소</p>
+            </label>
+            <div class="input-wrap mgbt10">
+              <input type="text" name="ps_code" class="ps_code" id="ps_code" readonly>
+              <button type="button" class="btn change-post-code">검색</button>
+            </div>
+            <div class="addr1 mgbt10">
+              <input type="text" name="addr_b" class="addr_b" readonly>
+            </div>
+            <div class="addr2">
+              <input type="text" name="addr_d" class="addr_d">
+            </div>
+          </div>
           <div class="membership_policy_agreement flex_box">
               <div class="policy_all_agreement flex_box">
                 <input type="checkbox" name="policy" id="policy_all">
@@ -190,251 +271,6 @@
       </section>
 
     </main>
-      <script>
-        let $userId = document.getElementById('user-id');
-        let $idClear = document.querySelector('.membership_join_id .clear-btn');
-        let $errId = document.querySelector('.err-id');
-        let $userPw = document.getElementById('user-pw');
-        let $pwClear = document.querySelector('.pw-clear');
-        let $pwVisible = document.querySelector('.pw-visible');
-        let $pwVisibleOff = document.querySelector('.pw-visible_off');
-        let $errPw = document.querySelector('.err-pw');
-        let $checkClear = document.querySelector('.check-clear');
-        let $pwCheck = document.getElementById('pw-check');
-        let $checkVisible = document.querySelector('.check-visible');
-        let $checkVisibleOff = document.querySelector('.check-visible_off');
-        let $pwCheckMsg = document.querySelector('.pw-check-msg');
-        let $userEmail = document.getElementById('user-email');
-        let $emailClear = document.querySelector('.email-clear');
-        let $errEmail = document.querySelector('.err-email');
-        let $policyAll = document.getElementById('policy_all');
-        let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        let $joinUs = document.querySelector('.joinus');
-        // 약관 동의
-        let $joinAge = document.getElementById('join_age');
-        let $privacy = document.getElementById('privacy');
-        let $siteUse = document.getElementById('site_use');
-        let $marketing = document.getElementById('marketing');
-        
-        let flagId, flagPw, flagEmail, flagPolicy = false;
-
-        let ptnId = /^[a-z0-9]{5,11}$/g;
-        let ptnPw = /^(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
-        let ptnEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-
-        function btnAble() {
-          if (flagId && flagPw && flagEmail && flagPolicy) {
-            $joinUs.removeAttribute('disabled');
-            $joinUs.classList.add('clickable');
-            return;
-          } 
-          if (!(flagId && flagPw && flagEmail && flagPolicy)) {
-            $joinUs.setAttribute('disabled', 'true');
-            $joinUs.classList.remove('clickable');
-            return;
-          }
-        }
-        function isPolicyAgree(e) {
-          if ($privacy.checked && $siteUse.checked && $joinAge.checked) {
-            flagPolicy = true;
-            btnAble();
-          } else {
-            flagPolicy = false;
-            btnAble();
-          }
-          if($privacy.checked && $siteUse.checked && $joinAge.checked && $marketing.checked) {
-            $policyAll.checked = true;
-          } else {
-            $policyAll.checked = false;
-          }
-        }
-        function clearValue(e) {
-          let val = e.target;
-          console.log(val)
-          if (val.previousElementSibling === $pwCheck) {
-            val.nextElementSibling.textContent = "";
-          } else {
-            val.nextElementSibling.textContent = "필수 입력사항입니다.";
-          }
-          val.style.display = "none";
-          val.previousElementSibling.focus();
-          val.previousElementSibling.value = '';
-          val.nextElementSibling.classList.remove('cor');
-          val.nextElementSibling.classList.add('err');
-        }
-        function pwVisible(e){
-          let val = e.target;
-          val.style.display = "none"
-          val.previousElementSibling.style.display = "block"
-          val.nextElementSibling.setAttribute('type', 'text');
-        }
-        function pwVisibleOff(e){
-          let val = e.target;
-          val.nextElementSibling.nextElementSibling.setAttribute('type', 'password');
-          val.style.display = "none"
-          val.nextElementSibling.style.display = "block"
-        }
-      
-        $userId.addEventListener('input', (e) => {
-          let val = e.target.value;
-          if(val) {
-            $idClear.style.display = "block"; 
-          } else {
-            $idClear.style.display = "none";
-          }
-
-          if(ptnId.test(val)) { // 유효성 검사 통과
-            $errId.classList.remove('err')
-            $errId.classList.add('cor')
-            $errId.textContent = '사용 가능한 아이디입니다.'
-            flagId = true;
-            btnAble();
-            return;
-          }
-          if(!ptnId.test(val)) {
-            $errId.classList.remove('cor')
-            $errId.classList.add('err')
-            $errId.textContent = '영문, 숫자 5-11.2'
-            flagId = false;
-            return;
-          } 
-          if (val.length < 5) {
-            $errId.classList.remove('cor')
-            $errId.classList.add('err')
-            $errId.textContent = '영문, 숫자 5-11.1'
-            flagId = false;
-            return;
-          }
-        });
-        $userId.addEventListener('blur', (e) => {
-          let val = e.target.value;
-          console.log('val2'+val);
-          if(ptnId.test(val)) { // 유효성 검사 통과
-            $errId.classList.remove('err')
-            $errId.classList.add('cor')
-            $errId.textContent = '사용 가능한 아이디입니다.'
-            flagId = true;
-            btnAble();
-            return;
-          }
-          if (!val) {
-            // $errId.textContent = '필수 입력사항입니다.'
-            flagId = false;
-            return;
-          }       
-          if (!ptnId.test(val)) {
-            $errId.classList.remove('cor')
-            $errId.textContent = '영문, 숫자 5-11.'
-            flagId = false;
-            return;
-          }
-        });
-        $userPw.addEventListener('input', (e) => {
-          let val = e.target.value;
-          if(val) {
-            $pwClear.style.display = "block"; 
-          } else {
-            $pwClear.style.display = "none";
-          }
-          if (ptnPw.test(val)) {
-            $errPw.textContent = '';
-            flagPw = true;
-            return;
-          }
-          if (!ptnPw.test(val)) {
-            $errPw.textContent = '8~30자 이내로 입력해 주십시오.';
-            flagPw = false;
-            return;
-          }
-        });
-        $userPw.addEventListener('blur', (e) => {
-          let val = e.target.value;
-          if (!val) { 
-            // $errPw.textContent = '필수 입력사항입니다.';
-            flagPw = false;
-            return;
-          }
-          if (val && val !== $pwCheck.value) {
-            // $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.1';
-            flagPw = false;
-          } else { // 유효성 검사 통과
-            $pwCheckMsg.textContent = '';
-            flagPw = true;
-          }
-        });
-        $pwCheck.addEventListener('input', (e) => {
-          let val = e.target.value;
-          if(val) {
-            $checkClear.style.display = "block"; 
-            if (val !== $userPw.value) {
-              $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.';
-              flagPw = false;
-            } else { // 유효성 검사 통과
-              $pwCheckMsg.textContent = '';
-              flagPw = true;
-              btnAble();
-            }
-          } else {
-            $checkClear.style.display = "none";
-          }
-        });
-        // $pwCheck.addEventListener('blur', (e) => {
-        //   let val = e.target.value;
-        //   console.log(val);
-          
-        // });
-        $userEmail.addEventListener('blur', (e) => {
-          if (!e.target.value) {
-            $errEmail.textContent = '필수 입력사항입니다.1'
-            flagEmail = false;
-
-          }
-        });
-        $userEmail.addEventListener('input', (e) => {
-          let val = e.target.value;
-          if(val) {
-            $emailClear.style.display = "block"; 
-          } else {
-            $emailClear.style.display = "none";
-          }
-          if (!ptnEmail.test(val)) {
-            $errEmail.textContent = '이메일 주소가 올바르지 않습니다.'
-            flagEmail = false;
-            return;
-          } else { // 유효성 검사 통과
-            $errEmail.textContent = ''
-            flagEmail = true;
-            btnAble();
-          }
-        });
-        $policyAll.addEventListener('click', (e) => {
-          checkboxes.forEach((checkbox) => {
-            checkbox.checked = $policyAll.checked;
-          });
-          if ($privacy.checked && $siteUse.checked && $joinAge.checked) {
-            flagPolicy = true;
-            btnAble();
-          } else {
-            flagPolicy = false;
-            btnAble();
-            // btnAble();
-          }
-        });
-
-        $joinAge.addEventListener('click', isPolicyAgree);
-        $privacy.addEventListener('click', isPolicyAgree);
-        $siteUse.addEventListener('click', isPolicyAgree);
-        $marketing.addEventListener('click', isPolicyAgree)
-        $idClear.addEventListener('click', clearValue);
-        $pwClear.addEventListener('click', clearValue);
-        $checkClear.addEventListener('click', clearValue);
-        $pwVisible.addEventListener('click',pwVisible);
-        $checkVisible.addEventListener('click',pwVisible);
-        $pwVisibleOff.addEventListener('click',pwVisibleOff);
-        $checkVisibleOff.addEventListener('click',pwVisibleOff);
-        $emailClear.addEventListener('click', clearValue);
-
-        </script>
     
     <!-- FOOTER -->
     <div class="footer_wrap">
@@ -466,6 +302,12 @@
 
     </div>
   </div>
+  <div class="postal-wrapper">
+    <div class="postal">
+      <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" class="btn-close-layer" onclick="closeDaumPostcode()" alt="닫기 버튼">
+    </div>
+  </div>
+    
 </body>
 
 </html>
