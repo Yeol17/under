@@ -285,7 +285,10 @@ input[type="text"], input[type="password"] {
   font-size: 0.9em;
   margin-bottom: 30px; 
   margin-top: 30px;
+<<<<<<< HEAD
   
+=======
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
 }
 .membership_policy_agreement .policy_all_agreement {
   font-weight: 700;

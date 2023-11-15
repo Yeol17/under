@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 let $uId = document.getElementById('u_id');
 let $idClear = document.querySelector('.membership_join_id .clear-btn');
 let $errId = document.querySelector('.err-id');
 let $pwd = document.getElementById('pwd');
+=======
+let $userId = document.getElementById('user-id');
+let $idClear = document.querySelector('.membership_join_id .clear-btn');
+let $errId = document.querySelector('.err-id');
+let $userPw = document.getElementById('user-pw');
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
 let $pwClear = document.querySelector('.pw-clear');
 let $pwVisible = document.querySelector('.pw-visible');
 let $pwVisibleOff = document.querySelector('.pw-visible_off');
@@ -13,7 +20,11 @@ let $checkVisibleOff = document.querySelector('.check-visible_off');
 let $pwCheckMsg = document.querySelector('.pw-check-msg');
 let $uName = document.getElementById('u_name');
 let $errName = document.querySelector('.err-name');
+<<<<<<< HEAD
 let $userEmail = document.getElementById('email_id');
+=======
+let $userEmail = document.getElementById('user-email');
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
 let $emailClear = document.querySelector('.email-clear');
 let $errEmail = document.querySelector('.err-email');
 let $policyAll = document.getElementById('policy_all');
@@ -30,7 +41,11 @@ let flagId, flagPw, flagEmail, flagPolicy, flagName = false;
 let ptnId = /^[a-z0-9]{5,11}$/g;
 let ptnName = /^[가-힣]{2,4}$/
 let ptnPw = /^(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+<<<<<<< HEAD
 let ptnEmail = /^[a-z0-9]{,20}$/g;
+=======
+let ptnEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
 
 function btnAble() {
   if (flagId && flagPw && flagEmail && flagPolicy && flagName) {
@@ -84,7 +99,11 @@ function pwVisibleOff(e) {
   val.nextElementSibling.style.display = "block"
 }
 
+<<<<<<< HEAD
 $uId.addEventListener('input', (e) => {
+=======
+$userId.addEventListener('input', (e) => {
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
   let val = e.target.value;
   if (val) {
     $idClear.style.display = "block";
@@ -115,7 +134,11 @@ $uId.addEventListener('input', (e) => {
     return;
   }
 });
+<<<<<<< HEAD
 $uId.addEventListener('blur', (e) => {
+=======
+$userId.addEventListener('blur', (e) => {
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
   let val = e.target.value;
   if (ptnId.test(val)) { // 유효성 검사 통과
     $errId.classList.remove('err')
@@ -137,7 +160,11 @@ $uId.addEventListener('blur', (e) => {
     return;
   }
 });
+<<<<<<< HEAD
 $pwd.addEventListener('input', (e) => {
+=======
+$userPw.addEventListener('input', (e) => {
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
   let val = e.target.value;
   if (val) {
     $pwClear.style.display = "block";
@@ -155,7 +182,11 @@ $pwd.addEventListener('input', (e) => {
     return;
   }
 });
+<<<<<<< HEAD
 $pwd.addEventListener('blur', (e) => {
+=======
+$userPw.addEventListener('blur', (e) => {
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
   let val = e.target.value;
   if (!val) {
     $errPw.textContent = '필수 입력사항입니다.';
@@ -175,7 +206,11 @@ $pwCheck.addEventListener('input', (e) => {
   let val = e.target.value;
   if (val) {
     $checkClear.style.display = "block";
+<<<<<<< HEAD
     if (val !== $pwd.value) {
+=======
+    if (val !== $userPw.value) {
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
       $pwCheckMsg.textContent = '비밀번호가 일치하지 않습니다.';
       flagPw = false;
     } else { // 유효성 검사 통과
@@ -208,22 +243,34 @@ $userEmail.addEventListener('blur', (e) => {
   if (!e.target.value) {
     $errEmail.textContent = '필수 입력사항입니다.1'
     flagEmail = false;
+<<<<<<< HEAD
   } else {
     flagEmail = true;
     $errEmail.textContent = ''
     console.log(flagEmail);
     btnAble();
+=======
+
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
   }
 });
 $userEmail.addEventListener('input', (e) => {
   let val = e.target.value;
   if (val) {
     $emailClear.style.display = "block";
+<<<<<<< HEAD
     
+=======
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
   } else {
     $emailClear.style.display = "none";
   }
   if (!ptnEmail.test(val)) {
+<<<<<<< HEAD
+=======
+    $errEmail.textContent = '이메일 주소가 올바르지 않습니다.'
+    flagEmail = false;
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
     return;
   } else { // 유효성 검사 통과
     $errEmail.textContent = ''

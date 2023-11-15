@@ -33,6 +33,11 @@ function psCode() {
     popupKey: 'popup1',
     maxSuggestItems: '0',
     oncomplete: function(data) {
+<<<<<<< HEAD
+=======
+      
+      console.log($postal);
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
       var addr = ''; // 주소변수
       var extraAddr = ''; // 참고 항목 변수
 
@@ -58,15 +63,23 @@ function psCode() {
         if (extraAddr !== '') {
           extraAddr = ' (' + extraAddr + ')';
         }
+<<<<<<< HEAD
 
       } else {
         extraAddr.value += '';
+=======
+      } else {
+        document.getElementById("address").value += '';
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
       }
       // 우편번호와 주소 정보를 해당 필드에 넣는다.
       $psCode.value = `(${data.zonecode})`;
       $addrB.value = addr + extraAddr;
       // 커서를 상세주소 필드로 이동한다.
+<<<<<<< HEAD
       $addrD.value = "";
+=======
+>>>>>>> d7601436c5cd5eeaee193b4c8ec111731a8d9983
       $addrD.focus();
       $body.classList.remove('no-scroll');
       $postalWrapper.style.display = 'none';
