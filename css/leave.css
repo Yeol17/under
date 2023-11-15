@@ -1,0 +1,82 @@
+
+.leave-guid {
+  color: #999;
+  width: 960px;
+  margin: 0 auto;
+  padding: 100px 0 120px;
+}
+.tit {
+  color: #333;
+  text-align: start;
+  line-height: 1.2em;
+}
+
+.sec1 {
+  margin-bottom: 10px;
+}
+.sec2-tit,
+.sec1-tit {
+  font-size: 1.1em;
+  color: #333;
+  margin-top: 10px;
+}
+.sec1-cont {
+  margin-top: 10px;
+}
+.sec1-cont>.sec1-li:before {
+  content: "·";
+  display: inline-block;
+  width: 10px;
+}
+
+.sec2-cont {
+  margin-top: 10px;
+}
+.sec2-li:before {
+  content: "·";
+  display: inline-block;
+  width: 10px;
+}
+
+.form_wrapper {
+  margin-top: 20px;
+}
+.chkbox {
+  display: none;
+}
+.form-box {
+}
+.form_wrapper .leaveAgree {
+  display: flex;
+  color: #333;
+  cursor: pointer;
+}
+.leaveAgree>i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../images/unChkBox.png) center;
+  margin-right: 10px;
+}
+.color-org {
+  color: rgb(255, 120, 0);
+}
+.btn_wrapper {
+  margin-top: 50px;
+  position: relative;
+  display: flex;
+}
+.btn_wrapper .btn {
+  position: relative;
+  width: 50%;
+  height: 56px;
+  cursor: pointer;
+  font-size: 1.2em
+}
+.btn-leave {
+  font-weight: 700;
+  margin-left: 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+}

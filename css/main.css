@@ -410,8 +410,6 @@ _menu h3 {
   font-size: 1.2em;
 }
 
-
-
 .new_product .btn_prev {
   width: 40px;
   height: 40px;
@@ -712,11 +710,11 @@ justify-content: space-between;
 }
 .main_images button.slick-prev{
   left : 150px;
-  background: url(../../images/btn_prev.png) no-repeat #fff;
+  background: url(../images/btn_prev.png) no-repeat #fff;
 }
 .main_images button.slick-next{
   right: 150px;
-  background: url(../../images/btn_next.png) no-repeat #fff;
+  background: url(../images/btn_next.png) no-repeat #fff;
 }
 
 /* best 버튼 */
@@ -736,10 +734,10 @@ justify-content: space-between;
 
 .best button.slick-prev {
   left: -10px;
-  background: #fff url(../../images/icn_prev.svg) no-repeat 7px;
+  background: url(../images/icn_prev.svg) no-repeat 7px #fff;
 }
 .best button.slick-next {
-  background: #fff url(../../images/icn_next.svg) no-repeat 10px;
+  background: url(../images/icn_next.svg) no-repeat 10px #fff;
   right: -10px;
 }
 

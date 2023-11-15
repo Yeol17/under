@@ -1,0 +1,24 @@
+<div class="wrap">
+    <!--HEADER-->
+    <?php
+    include "../inc/header.php";
+    ?>
+    
+    <!--CONTENT-->
+    <main id="main" class="content">
+
+      <section class="modify_check">
+
+        
+        
+      </section>
+
+    </main>
+      
+    
+    <!-- FOOTER -->
+    <?php
+    include "../inc/footer.php";
+    ?>
+
+  </div>
